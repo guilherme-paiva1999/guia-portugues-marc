@@ -1,0 +1,72 @@
+[
+  {
+    "file": "index.html",
+    "id": "index",
+    "title": "Início",
+    "nav": "Início",
+    "nav_en": "Home"
+  },
+  {
+    "file": "01-comecando.html",
+    "id": "comecando",
+    "title": "Começando",
+    "nav": "Começando",
+    "nav_en": "Getting started"
+  },
+  {
+    "file": "02-alfabeto.html",
+    "id": "alfabeto",
+    "title": "Alfabeto",
+    "nav": "Alfabeto",
+    "nav_en": "Alphabet"
+  },
+  {
+    "file": "03-sons-e-fonetica.html",
+    "id": "sons",
+    "title": "Sons e IPA",
+    "nav": "Sons e IPA",
+    "nav_en": "Sounds & IPA"
+  },
+  {
+    "file": "04-apresentacao.html",
+    "id": "apresentacao",
+    "title": "Apresentação",
+    "nav": "Apresentação",
+    "nav_en": "Introduction"
+  },
+  {
+    "file": "05-gramatica-basica.html",
+    "id": "gramatica",
+    "title": "Gramática",
+    "nav": "Gramática",
+    "nav_en": "Grammar"
+  },
+  {
+    "file": "06-numeros-e-tempo.html",
+    "id": "numeros",
+    "title": "Números e tempo",
+    "nav": "Números e tempo",
+    "nav_en": "Numbers & time"
+  },
+  {
+    "file": "07-brasil-x-portugal.html",
+    "id": "brasil",
+    "title": "Brasil × Portugal",
+    "nav": "Brasil × Portugal",
+    "nav_en": "Brazil vs Portugal"
+  },
+  {
+    "file": "08-praticar.html",
+    "id": "praticar",
+    "title": "Praticar",
+    "nav": "Praticar",
+    "nav_en": "Practice"
+  },
+  {
+    "file": "09-roteiro-de-aulas.html",
+    "id": "roteiro",
+    "title": "Roteiro",
+    "nav": "Roteiro",
+    "nav_en": "Lesson plan"
+  }
+]

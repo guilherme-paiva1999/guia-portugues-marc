@@ -1,0 +1,163 @@
+<h1>Começando<span class="tr">Getting started</span></h1>
+<p class="sec-intro">Módulo 1 · Getting started. Primeiras palavras, cumprimentos, frases para a sala de aula e uma autoavaliação.<span class="tr">First words, greetings, classroom phrases and a self-assessment.</span></p>
+
+<div class="callout">
+  <b class="t">Why Brazilian Portuguese?</b>
+  <p>About four out of five Portuguese speakers live in Brazil, so this is the version you will hear in most of the Portuguese-speaking world. The written language is nearly the same as in Portugal; the <b>sound</b> is what changes most, and that is what we will train.</p>
+</div>
+
+<h2>1. Você já sabe português!<span class="tr"> · You already know Portuguese!</span></h2>
+<p>Many words look like English or German. Listen, then match each word with its meaning.</p>
+<div id="cog"></div>
+<div class="callout warn">
+  <b class="t">Falsos amigos · False friends</b>
+  <p>Some look familiar but trick you: <span class="pt">puxar</span> = to <b>pull</b> (not push) · <span class="pt">pasta</span> = folder (also paste) · <span class="pt">atual</span> = current · <span class="pt">livraria</span> = bookstore · <span class="pt">parente</span> = relative · <span class="pt">esquisito</span> = weird.</p>
+</div>
+<div id="falsos"></div>
+
+<h2>2. Primeiras palavras<span class="tr"> · First words</span></h2>
+<p>Click the card to flip it. Mark the ones you already know.</p>
+<div id="fc1"></div>
+
+<div class="callout de">
+  <b class="t">🇩🇪 Obrigado ou obrigada?</b>
+  <p>A man says <span class="pt">obrigado</span>, a woman says <span class="pt">obrigada</span>. It follows the <b>speaker</b>, not the listener.</p>
+</div>
+
+<h2>3. Cumprimentos<span class="tr"> · Greetings</span></h2>
+<div id="greet"></div>
+<p>When do you say each one?</p>
+<div id="qgreet"></div>
+
+<h3>Mini-diálogo<span class="tr"> · Mini dialogue</span></h3>
+<div class="card" id="dialog"></div>
+<p>Put the words in order to rebuild the dialogue lines.</p>
+<div id="roDialog"></div>
+<div class="callout prof">
+  <b class="t">Para a professora<span class="tr"> · For the teacher</span></b>
+  <p>Faça o diálogo duas vezes: primeiro você como A, depois invertam. Troque “Marc” por outros nomes e inclua “prazer” com um aperto de mão. No Brasil, “Oi, tudo bem?” é resposta e pergunta ao mesmo tempo (“Tudo bem, e você?”).</p>
+  <p class="tr">Run the dialogue twice: first you as A, then swap roles. Replace “Marc” with other names and add “prazer” with a handshake. In Brazil “Oi, tudo bem?” works as both greeting and question (“Tudo bem, e você?”).</p>
+</div>
+
+<h2>4. Frases para a sala de aula<span class="tr"> · Classroom phrases</span></h2>
+<p>Use these every lesson. They are your survival kit.</p>
+<div id="classroom"></div>
+<div id="mClass"></div>
+
+<h2>5. Onde você está hoje?<span class="tr"> · Where are you today?</span></h2>
+<p>Rate yourself from 0 (nothing yet) to 3 (easy). You will repeat this after the course.</p>
+<div class="card" id="cando"></div>
+
+<button type="button" class="btn complete" data-complete>Marcar módulo como concluído</button>
+
+<script>
+(function(){
+var G = window.G, U = G.UI;
+
+/* cognates */
+G.Match.mount(G.$('#cog'), { sayLeft:true, pairs:[
+  ['família','family'],['hotel','hotel'],['aeroporto','airport'],['restaurante','restaurant'],['importante','important'],
+  ['música','music'],['telefone','telephone'],['problema','problem'],['universidade','university'],['informação','information']
+]});
+G.Quiz.mount(G.$('#falsos'), { id:'falsos', questions:[
+  {q:'<b>Puxe</b> a porta! What should you do?', options:['Pull the door','Push the door','Lock the door'], answer:0, keepOrder:true, why:'<i>Puxar</i> = pull; <i>empurrar</i> = push.'},
+  {q:'<b>Livraria</b> means…', options:['library','bookstore','bookshelf'], answer:1, keepOrder:true, why:'Library = <i>biblioteca</i>.'},
+  {q:'<b>Meus pais</b> and <b>meus parentes</b>: which is “my relatives”?', options:['meus pais','meus parentes'], answer:1, keepOrder:true, why:'<i>Pais</i> = parents; <i>parentes</i> = relatives.'},
+  {q:'<b>Atual</b> means…', options:['actual','current','attitude'], answer:1, keepOrder:true, why:'Actual = <i>real</i> / <i>de fato</i>.'},
+  {q:'<b>Esquisito</b> means…', options:['exquisite','weird','expensive'], answer:1, keepOrder:true}
+]});
+
+/* flashcards */
+G.Cards.mount(G.$('#fc1'), { id:'primeiras', deck:[
+  {f:'Oi!',b:'Hi!',say:'Oi!',n:'The most common greeting in Brazil.'},
+  {f:'Olá',b:'Hello',say:'Olá',n:'A bit more formal than “oi”.'},
+  {f:'Tudo bem?',b:'How are you? / All good?',say:'Tudo bem?',n:'Answer: “Tudo bem, e você?”'},
+  {f:'Bom dia',b:'Good morning',say:'Bom dia'},
+  {f:'Boa tarde',b:'Good afternoon',say:'Boa tarde',n:'From about noon until dusk.'},
+  {f:'Boa noite',b:'Good evening / Good night',say:'Boa noite',n:'Both for arriving and leaving at night.'},
+  {f:'Tchau',b:'Bye',say:'Tchau',n:'Also “até logo”, “até amanhã”.'},
+  {f:'Por favor',b:'Please',say:'Por favor'},
+  {f:'Obrigado / Obrigada',b:'Thank you',say:'Obrigado. Obrigada.',n:'Man: obrigado · woman: obrigada.'},
+  {f:'De nada',b:'You are welcome',say:'De nada'},
+  {f:'Desculpa / Desculpe',b:'Sorry',say:'Desculpa',n:'“Desculpa” is informal, “desculpe” is polite.'},
+  {f:'Com licença',b:'Excuse me',say:'Com licença',n:'To pass by or to interrupt.'},
+  {f:'Sim / Não',b:'Yes / No',say:'Sim. Não.'},
+  {f:'Prazer',b:'Nice to meet you',say:'Prazer',n:'Full form: “Muito prazer”.'},
+  {f:'Como vai?',b:'How is it going?',say:'Como vai?'},
+  {f:'Até logo',b:'See you later',say:'Até logo'}
+]});
+
+/* greetings table */
+U.table(G.$('#greet'), ['Português','English','Ouvir'], [
+  ['<span class="pt">Oi! Tudo bem?</span>','Hi! How are you?',U.both('Oi! Tudo bem?')],
+  ['<span class="pt">Tudo bem, e você?</span>','Good, and you?',U.both('Tudo bem, e você?')],
+  ['<span class="pt">Tudo ótimo!</span>','Great!',U.both('Tudo ótimo!')],
+  ['<span class="pt">Mais ou menos.</span>','So-so.',U.both('Mais ou menos.')],
+  ['<span class="pt">Meu nome é Marc. E o seu?</span>','My name is Marc. And yours?',U.both('Meu nome é Marc. E o seu?')],
+  ['<span class="pt">Muito prazer!</span>','Nice to meet you!',U.both('Muito prazer!')],
+  ['<span class="pt">Até amanhã!</span>','See you tomorrow!',U.both('Até amanhã!')]
+]);
+G.Quiz.mount(G.$('#qgreet'), { id:'cumprimentos', shuffle:true, questions:[
+  {q:'It is 8:00 in the morning. You say…', options:['Boa noite','Bom dia','Boa tarde'], answer:1, keepOrder:true},
+  {q:'It is 3:00 in the afternoon. You say…', options:['Bom dia','Boa noite','Boa tarde'], answer:2, keepOrder:true},
+  {q:'You leave a friend at night. You say…', options:['Boa noite','Bom dia','Obrigado'], answer:0, keepOrder:true},
+  {q:'Someone asks “Tudo bem?”. A natural answer is…', options:['De nada','Tudo bem, e você?','Com licença'], answer:1, keepOrder:true},
+  {q:'You step on someone’s foot. You say…', options:['Desculpa!','Prazer!','Tchau!'], answer:0, keepOrder:true},
+  {q:'You are a man. Someone holds the door for you.', options:['Obrigada','Obrigado','Obrigade'], answer:1, keepOrder:true, why:'A man says <i>obrigado</i>.'},
+  {q:'Listen and choose what you hear.', say:'Boa tarde', options:['Bom dia','Boa tarde','Boa noite'], answer:1, keepOrder:true}
+]});
+
+/* dialog */
+G.$('#dialog').innerHTML = [
+  ['A','Oi! Eu sou a Ana. Qual é o seu nome?','Hi! I am Ana. What is your name?'],
+  ['B','Oi, Ana! Meu nome é Marc. Muito prazer!','Hi, Ana! My name is Marc. Nice to meet you!'],
+  ['A','Prazer! Você é de onde?','Nice to meet you! Where are you from?'],
+  ['B','Eu sou da Alemanha, mas moro em Portugal.','I am from Germany, but I live in Portugal.'],
+  ['A','Que legal! Tudo bem por aí?','How cool! All good over there?'],
+  ['B','Tudo ótimo, obrigado! E você?','Great, thanks! And you?']
+].map(function(l){ return '<div class="sentence"><div class="tx"><span class="tag '+(l[0]==='A'?'br':'')+'">'+l[0]+'</span> <span class="pt-s">'+l[1]+'</span><br><span class="en">'+l[2]+'</span></div>'+U.say(l[1])+U.say(l[1],{slow:true})+'</div>'; }).join('');
+G.Reorder.mount(G.$('#roDialog'), [
+  {pt:'Meu nome é Marc.',en:'My name is Marc.'},
+  {pt:'Eu sou da Alemanha.',en:'I am from Germany.'},
+  {pt:'Tudo bem, e você?',en:'Good, and you?'}
+]);
+
+/* classroom phrases */
+var cls = [
+  ['Pode repetir, por favor?','Can you repeat, please?'],
+  ['Mais devagar, por favor.','Slower, please.'],
+  ['Não entendi.','I did not understand.'],
+  ['Como se diz “thank you” em português?','How do you say “thank you” in Portuguese?'],
+  ['O que significa “saudade”?','What does “saudade” mean?'],
+  ['Como se escreve?','How do you spell/write it?'],
+  ['Pode soletrar?','Can you spell it?'],
+  ['Eu não sei.','I do not know.'],
+  ['Eu estou aprendendo português.','I am learning Portuguese.'],
+  ['Está certo?','Is it correct?']
+];
+U.table(G.$('#classroom'), ['Português','English','Ouvir'], cls.map(function(c){ return ['<span class="pt">'+c[0]+'</span>',c[1],U.both(c[0])]; }));
+G.Match.mount(G.$('#mClass'), { title:'Match the situation with the phrase', pairs:[
+  ['You did not hear it well','Pode repetir, por favor?'],
+  ['They speak too fast','Mais devagar, por favor.'],
+  ['You do not understand','Não entendi.'],
+  ['You want to check your answer','Está certo?'],
+  ['You want the meaning of a word','O que significa…?']
+]});
+
+/* can-do */
+var items = [
+  'Cumprimentar e me despedir'+G.tr('Say hello and goodbye'),
+  'Falar meu nome e de onde sou'+G.tr('Say my name and where I am from'),
+  'Soletrar meu nome em português'+G.tr('Spell my name in Portuguese'),
+  'Entender números até 100'+G.tr('Understand numbers up to 100'),
+  'Pedir para repetir ou falar mais devagar'+G.tr('Ask to repeat or speak more slowly'),
+  'Pronunciar os sons básicos do português do Brasil'+G.tr('Pronounce the basic sounds of Brazilian Portuguese')
+];
+var rk = 'cando:v1', rates = G.Store.get(rk, {});
+var cd = G.$('#cando');
+cd.innerHTML = items.map(function(t,n){ return '<div class="cando"><span>'+t+'</span><span class="rate" data-n="'+n+'">'+[0,1,2,3].map(function(v){ return '<button type="button" data-v="'+v+'" aria-pressed="'+(rates[n]===v)+'">'+v+'</button>'; }).join('')+'</span></div>'; }).join('') + '<p class="muted" id="cdsum" style="margin:10px 0 0"></p>';
+function sum(){ var t=0,c=0; for(var k in rates){ t+=rates[k]; c++; } G.$('#cdsum').innerHTML = c ? ('Total: '+t+' de '+(items.length*3)+' pontos.'+G.tr('Total: '+t+' of '+(items.length*3)+' points')) : 'Clique nos números para avaliar.'+G.tr('Click the numbers to rate yourself'); }
+cd.addEventListener('click', function(e){ var b = e.target.closest('button[data-v]'); if(!b) return; var n = b.parentNode.getAttribute('data-n'); rates[n] = +b.getAttribute('data-v'); G.Store.set(rk, rates); G.$$('button', b.parentNode).forEach(function(x){ x.setAttribute('aria-pressed', x===b); }); sum(); });
+sum();
+})();
+</script>

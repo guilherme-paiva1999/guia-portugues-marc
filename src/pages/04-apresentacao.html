@@ -1,0 +1,215 @@
+<h1>Apresentação do Marc<span class="tr">Marc's introduction</span></h1>
+<p class="sec-intro">Módulo 4 · Introducing yourself. O texto que o Marc escreveu, agora em português do Brasil, para ler, ouvir, completar e repetir.<span class="tr">The text Marc wrote, now in Brazilian Portuguese, to read, listen to, complete and repeat.</span></p>
+
+<div class="callout">
+  <b class="t">Your story, in Brazilian Portuguese</b>
+  <p>This is a natural A1/A2 version of your own text. Read it, listen sentence by sentence, then make it yours. Who you are moving with is flexible: choose below.</p>
+</div>
+
+<h2>1. Leia e ouça<span class="tr"> · Read and listen</span></h2>
+<div class="tool">
+  <div class="row">
+    <button type="button" class="btn pri" id="playAll">▶ Ouvir o texto inteiro<span class="tr"> · Play the whole text</span></button>
+    <button type="button" class="btn" id="stopAll">■ Parar<span class="tr"> · Stop</span></button>
+    <button type="button" class="btn" id="toggleEn">Esconder inglês · Hide English</button>
+    <label for="partner">com</label>
+    <select id="partner" aria-label="Parceiro ou parceira">
+      <option value="minha parceira">minha parceira (my partner)</option>
+      <option value="meu parceiro">meu parceiro (my partner)</option>
+    </select>
+  </div>
+  <div id="story"></div>
+</div>
+
+<h2>2. Vocabulário do texto<span class="tr"> · Vocabulary from the text</span></h2>
+<div id="vocab"></div>
+<div class="callout tip">
+  <b class="t">Brasil: dois detalhes do texto</b>
+  <p><b>Vietnã</b> (Brasil) · <i>Vietname</i> (Portugal). And <span class="pt">me mudar</span> (Brasil: pronoun before the verb) · <span class="pt">mudar-me</span> (Portugal: after the verb). You will hear “Eu me chamo…” in Brazil, but “Chamo-me…” in Portugal.</p>
+</div>
+
+<h3>Há dois anos: o passado em 5 verbos<span class="tr"> · Two years ago: the past tense in 5 verbs</span></h3>
+<p>The text uses the simple past (<i>pretérito perfeito</i>). Just recognize these now; we practice them later in <a href="05-gramatica-basica.html">Gramática</a>.</p>
+<div id="past"></div>
+<div class="callout de">
+  <b class="t">🇩🇪 “seit zwei Jahren” = há dois anos</b>
+  <p>German uses the present: <i>Ich wohne seit zwei Jahren hier</i>. In Portuguese we also say <span class="pt">Eu moro aqui há dois anos</span> (present + <i>há</i>). But for a finished action: <span class="pt">Há dois anos eu vim para Portugal</span> (“two years ago I came”).</p>
+</div>
+
+<h2>3. Complete o texto<span class="tr"> · Complete the text</span></h2>
+<div id="cloze"></div>
+
+<h2>4. Ordene as frases<span class="tr"> · Put the sentences in order</span></h2>
+<div id="order"></div>
+
+<h2>5. Compreensão<span class="tr"> · Comprehension</span></h2>
+<div id="qComp"></div>
+
+<h2>6. Entrevista rápida<span class="tr"> · Quick interview</span></h2>
+<p>The teacher asks, Marc answers. Click a question to hear it, then read the model answer out loud, and press 🎤 to check yourself.</p>
+<div id="interview"></div>
+
+<h2>7. Agora é com você<span class="tr"> · Now it's your turn</span></h2>
+<p>Build your own introduction. Choose the options and press the button.</p>
+<div class="tool">
+  <div class="row"><label for="fName">Nome<span class="tr"> · Name</span></label><input type="text" id="fName" value="Marc" autocomplete="off"><label for="fAge">Idade<span class="tr"> · Age</span></label><input type="number" id="fAge" value="48" min="1" max="99" style="width:5.5em"></div>
+  <div class="row"><label for="fFrom">Eu sou…<span class="tr"> · I am from…</span></label><select id="fFrom"></select><label for="fLive">Eu moro…<span class="tr"> · I live…</span></label><select id="fLive"></select></div>
+  <div class="row"><label for="fLike">Eu gosto de…<span class="tr"> · I like to…</span></label><select id="fLike"><option value="viajar" data-en="travel">viajar (travel)</option><option value="cozinhar" data-en="cook">cozinhar (cook)</option><option value="ler" data-en="read">ler (read)</option><option value="caminhar" data-en="walk">caminhar (walk)</option><option value="ouvir música" data-en="listen to music">ouvir música (listen to music)</option><option value="conhecer pessoas" data-en="meet people">conhecer pessoas (meet people)</option><option value="aprender idiomas" data-en="learn languages">aprender idiomas (learn languages)</option></select></div>
+  <div class="row"><button type="button" class="btn pri" id="fGo">Montar minha apresentação<span class="tr"> · Build my introduction</span></button></div>
+  <div id="fOut"></div>
+</div>
+
+<div class="callout prof">
+  <b class="t">Para a professora<span class="tr"> · For the teacher</span></b>
+  <p>Sequência sugerida: (1) leitura em coro, frase por frase; (2) o Marc lê sozinho; (3) perguntas de compreensão em português; (4) ele conta a história sem olhar, usando só os verbos-chave: <i>nascer, morar, viajar, vir, ficar, querer</i>; (5) ele grava um áudio de 30 segundos como tarefa. Se o Marc preferir outra forma de mencionar o parceiro ou a parceira, ajuste a frase 7 (“namorado/a”, “esposa/marido”).</p>
+  <p class="tr">Suggested sequence: (1) choral reading, sentence by sentence; (2) Marc reads alone; (3) comprehension questions in Portuguese; (4) he tells the story without looking, using only key verbs: nascer, morar, viajar, vir, ficar, querer; (5) he records a 30-second audio as homework. If Marc prefers another way to refer to his partner, adjust sentence 7 (“namorado/a”, “esposa/marido”).</p>
+</div>
+
+<button type="button" class="btn complete" data-complete>Marcar módulo como concluído</button>
+
+<script>
+(function(){
+var G = window.G, U = G.UI, PT = G.PT;
+/* ---- story ---- */
+function sentences(){
+  var p = G.$('#partner').value;
+  return [
+   {pt:'Oi, meu nome é Marc.', en:'Hi, my name is Marc.'},
+   {pt:'Nasci em 1977, então tenho 48 anos.', say:'Nasci em mil novecentos e setenta e sete, então tenho quarenta e oito anos.', en:'I was born in 1977, so I am 48 years old.'},
+   {pt:'Eu sou da Alemanha, mas gosto de viajar e de morar em países diferentes.', en:'I am from Germany, but I like to travel and live in different countries.'},
+   {pt:'Morei no Vietnã e na Malásia por muitos anos e viajei por toda a Ásia.', en:'I lived in Vietnam and Malaysia for many years and travelled all over Asia.'},
+   {pt:'Há dois anos eu vim para Portugal e acabei ficando, porque gosto muito daqui.', en:'Two years ago I came to Portugal and ended up staying, because I like it here very much.'},
+   {pt:'Por isso eu quero aprender a falar português como um brasileiro.', en:'That is why I want to learn to speak Portuguese like a Brazilian.'},
+   {pt:'Um dos meus objetivos para o futuro é realmente me mudar para o Brasil com '+p+' e morar lá.', en:'One of my goals for the future is to actually move to Brazil with my partner and live there.'}
+  ];
+}
+var story = G.$('#story'), cur = [];
+function drawStory(){
+  cur = sentences();
+  story.innerHTML = cur.map(function(s,n){ var say = s.say || s.pt;
+    return '<div class="sentence" data-n="'+n+'"><div class="tx"><div class="pt-s">'+s.pt+'</div><div class="en en-s">'+s.en+'</div><div class="listen" data-n="'+n+'"></div></div>'+U.say(say)+U.say(say,{slow:true})+'</div>'; }).join('');
+  G.$$('.listen', story).forEach(function(b){ G.Listen.attach(b, cur[+b.getAttribute('data-n')].pt); });
+}
+drawStory();
+G.$('#partner').addEventListener('change', drawStory);
+G.$('#playAll').addEventListener('click', function(){
+  G.TTS.seq(cur.map(function(s){ return {text:s.say||s.pt}; }), function(ev, i){
+    G.$$('.sentence', story).forEach(function(x){ x.classList.remove('playing'); });
+    if(ev==='item') G.$$('.sentence', story)[i].classList.add('playing');
+  });
+});
+G.$('#stopAll').addEventListener('click', function(){ G.TTS.stop(); G.$$('.sentence', story).forEach(function(x){ x.classList.remove('playing'); }); });
+var en = true;
+G.$('#toggleEn').addEventListener('click', function(){ en = !en; story.classList.toggle('hide-en', !en); this.textContent = en ? 'Esconder inglês · Hide English' : 'Mostrar inglês · Show English'; });
+
+/* ---- vocab ---- */
+var V = [
+ ['nascer → <b>nasci</b>','to be born → I was born',''],
+ ['então','so, then',''],
+ ['ter → <b>tenho</b> 48 anos','I am 48 (Portuguese “has” years)','Age uses <i>ter</i>, not <i>ser</i>.'],
+ ['ser de → <b>sou</b> da Alemanha','to be from','de + a = da · de + o = do'],
+ ['mas','but',''],
+ ['gostar de','to like','Always with <i>de</i>: gosto de viajar.'],
+ ['viajar → <b>viajei</b>','to travel → I travelled',''],
+ ['morar → <b>morei</b>','to live (reside) → I lived','In Brazil <i>morar</i> is the usual verb for “live in”.'],
+ ['em + o = <b>no</b>, em + a = <b>na</b>','in the','no Vietnã, na Malásia'],
+ ['por muitos anos','for many years',''],
+ ['toda a Ásia','all of Asia',''],
+ ['há dois anos','two years ago',''],
+ ['vir → <b>vim</b>','to come → I came',''],
+ ['ficar → <b>fiquei</b>','to stay → I stayed','acabei ficando = I ended up staying'],
+ ['porque','because',''],
+ ['daqui','from/of here','de + aqui'],
+ ['por isso','that is why',''],
+ ['querer → <b>quero</b>','to want → I want',''],
+ ['aprender a falar','to learn to speak','aprender <b>a</b> + verb'],
+ ['como um brasileiro','like a Brazilian','como = like/as'],
+ ['objetivo','goal',''],
+ ['me mudar para','to move to',''],
+ ['parceiro / parceira','partner',''],
+ ['lá','there','aqui = here · lá = there']
+];
+U.table(G.$('#vocab'), ['Português','English','Nota'], V);
+
+U.table(G.$('#past'), ['Infinitivo','Eu (passado)','Frase do texto','Ouvir'], [
+ ['nascer','<b>nasci</b>','Nasci em 1977.'+G.trB('I was born in 1977.'),U.both('Nasci em mil novecentos e setenta e sete.')],
+ ['morar','<b>morei</b>','Morei no Vietnã.'+G.trB('I lived in Vietnam.'),U.both('Morei no Vietnã.')],
+ ['viajar','<b>viajei</b>','Viajei por toda a Ásia.'+G.trB('I travelled all over Asia.'),U.both('Viajei por toda a Ásia.')],
+ ['vir','<b>vim</b>','Eu vim para Portugal.'+G.trB('I came to Portugal.'),U.both('Eu vim para Portugal.')],
+ ['ficar','<b>fiquei</b>','Eu fiquei em Portugal.'+G.trB('I stayed in Portugal.'),U.both('Eu fiquei em Portugal.')]
+]);
+
+/* ---- cloze ---- */
+G.Cloze.mount(G.$('#cloze'), { bank:['nome','Nasci','tenho','sou','gosto','Morei','anos','vim','fiquei','quero','falar'], items:[
+ {t:'Oi, meu [[nome]] é Marc.', en:'Hi, my name is Marc.'},
+ {t:'[[Nasci]] em 1977, então [[tenho]] 48 anos.', en:'I was born in 1977, so I am 48.'},
+ {t:'Eu [[sou]] da Alemanha, mas [[gosto]] de viajar.', en:'I am from Germany, but I like to travel.'},
+ {t:'[[Morei]] no Vietnã e na Malásia por muitos [[anos]].', en:'I lived in Vietnam and Malaysia for many years.'},
+ {t:'Há dois anos eu [[vim]] para Portugal e [[fiquei]].', en:'Two years ago I came to Portugal and stayed.'},
+ {t:'Por isso eu [[quero]] aprender a [[falar]] português.', en:'That is why I want to learn to speak Portuguese.'}
+]});
+
+/* ---- reorder ---- */
+G.Reorder.mount(G.$('#order'), [
+ {pt:'Eu sou da Alemanha.', en:'I am from Germany.'},
+ {pt:'Morei no Vietnã e na Malásia.', en:'I lived in Vietnam and Malaysia.'},
+ {pt:'Eu quero morar no Brasil.', en:'I want to live in Brazil.'},
+ {pt:'Gosto muito de viajar.', en:'I like travelling a lot.'},
+ {pt:'Há dois anos eu vim para Portugal.', en:'Two years ago I came to Portugal.'}
+]);
+
+/* ---- comprehension ---- */
+(function(){ var T = G.tr, B = G.trB;
+G.Quiz.mount(G.$('#qComp'), { id:'compreensao', shuffle:true, questions:[
+ {q:'De onde o Marc é?'+T('Where is Marc from?'), options:['Da Alemanha'+B('From Germany'),'Do Brasil'+B('From Brazil'),'De Portugal'+B('From Portugal'),'Da Malásia'+B('From Malaysia')], answer:0, keepOrder:true},
+ {q:'Quantos anos o Marc tem?'+T('How old is Marc?'), options:['38','48','58'], answer:1, keepOrder:true, why:'<i>Tenho quarenta e oito anos.</i>'+B('I am forty-eight.')},
+ {q:'Onde o Marc morou por muitos anos?'+T('Where did Marc live for many years?'), options:['No Vietnã e na Malásia'+B('In Vietnam and Malaysia'),'No Brasil'+B('In Brazil'),'Na França'+B('In France')], answer:0, keepOrder:true},
+ {q:'Há quanto tempo o Marc está em Portugal?'+T('How long has Marc been in Portugal?'), options:['Há dois anos'+B('Two years'),'Há vinte anos'+B('Twenty years'),'Há dois meses'+B('Two months')], answer:0, keepOrder:true},
+ {q:'Por que ele quer aprender português?'+T('Why does he want to learn Portuguese?'), options:['Porque quer viajar pela Europa'+B('Because he wants to travel around Europe'),'Porque quer morar no Brasil'+B('Because he wants to live in Brazil'),'Porque quer trabalhar na Ásia'+B('Because he wants to work in Asia')], answer:1, keepOrder:true},
+ {q:'Listen and choose the sentence you hear.', say:'Eu moro em Portugal há dois anos.', options:['Eu moro em Portugal há dois anos.'+B('I have lived in Portugal for two years.'),'Eu morei em Portugal há dois anos.'+B('I lived in Portugal two years ago.'),'Eu moro no Brasil há dois anos.'+B('I have lived in Brazil for two years.')], answer:0, keepOrder:true},
+ {type:'type', q:'Escreva em português: <i>I want to live in Brazil.</i>'+T('Write in Portuguese'), answer:['Eu quero morar no Brasil.','Quero morar no Brasil.'], why:'<i>Quero</i> + infinitive.'}
+]});
+})();
+
+/* ---- interview ---- */
+var IV = [];
+function drawInterview(){
+  var T = G.tr;
+  IV = [
+   ['Como você se chama?','Eu me chamo Marc. / Meu nome é Marc.','What is your name?','I call myself Marc. / My name is Marc.'],
+   ['De onde você é?','Eu sou da Alemanha.','Where are you from?','I am from Germany.'],
+   ['Quantos anos você tem?','Eu tenho quarenta e oito anos.','How old are you?','I am forty-eight years old.'],
+   ['Onde você mora?','Eu moro em Portugal.','Where do you live?','I live in Portugal.'],
+   ['Onde você morou antes?','Eu morei no Vietnã e na Malásia.','Where did you live before?','I lived in Vietnam and Malaysia.'],
+   ['O que você gosta de fazer?','Eu gosto de viajar.','What do you like to do?','I like to travel.'],
+   ['Por que você quer aprender português?','Porque eu quero morar no Brasil.','Why do you want to learn Portuguese?','Because I want to live in Brazil.'],
+   ['Com quem você vai morar no Brasil?','Eu vou morar lá com '+G.$('#partner').value+'.','Who will you live with in Brazil?','I am going to live there with my partner.']
+  ];
+  G.$('#interview').innerHTML = IV.map(function(q,n){ return '<div class="sentence"><div class="tx"><div class="pt-s">'+q[0]+' '+U.say(q[0])+'</div><div class="tr">'+q[2]+'</div><details class="fold" style="margin:6px 0 0"><summary>Resposta modelo'+T('Model answer')+'</summary><div><div class="pt-s">'+q[1]+' '+U.both(q[1])+'</div><div class="tr">'+q[3]+'</div><div class="listen" data-n="'+n+'"></div></div></details></div></div>'; }).join('');
+  G.$$('#interview .listen').forEach(function(b){ G.Listen.attach(b, IV[+b.getAttribute('data-n')][1].split(' / ')[0]); });
+}
+drawInterview();
+G.$('#partner').addEventListener('change', drawInterview);
+
+/* ---- builder ---- */
+var C = [['Alemanha','da Alemanha','na Alemanha'],['Áustria','da Áustria','na Áustria'],['Suíça','da Suíça','na Suíça'],['Portugal','de Portugal','em Portugal'],['Brasil','do Brasil','no Brasil'],['França','da França','na França'],['Itália','da Itália','na Itália'],['Espanha','da Espanha','na Espanha'],['Inglaterra','da Inglaterra','na Inglaterra'],['Estados Unidos','dos Estados Unidos','nos Estados Unidos'],['Canadá','do Canadá','no Canadá'],['Japão','do Japão','no Japão'],['Vietnã','do Vietnã','no Vietnã'],['Malásia','da Malásia','na Malásia']];
+var CE = {'Alemanha':'Germany','Áustria':'Austria','Suíça':'Switzerland','Portugal':'Portugal','Brasil':'Brazil','França':'France','Itália':'Italy','Espanha':'Spain','Inglaterra':'England','Estados Unidos':'the United States','Canadá':'Canada','Japão':'Japan','Vietnã':'Vietnam','Malásia':'Malaysia'};
+G.$('#fFrom').innerHTML = C.map(function(c){ return '<option value="'+c[1]+'" data-en="'+CE[c[0]]+'"'+(c[0]==='Alemanha'?' selected':'')+'>'+c[1]+' ('+CE[c[0]]+')</option>'; }).join('');
+G.$('#fLive').innerHTML = C.map(function(c){ return '<option value="'+c[2]+'" data-en="'+CE[c[0]]+'"'+(c[0]==='Portugal'?' selected':'')+'>'+c[2]+' ('+CE[c[0]]+')</option>'; }).join('');
+G.$('#fGo').addEventListener('click', function(){
+  var name = G.$('#fName').value.trim() || 'Marc', age = parseInt(G.$('#fAge').value,10);
+  var lines = [
+   'Oi, meu nome é '+name+'.',
+   'Eu tenho '+age+' anos.',
+   'Eu sou '+G.$('#fFrom').value+'.',
+   'Eu moro '+G.$('#fLive').value+'.',
+   'Eu gosto de '+G.$('#fLike').value+'.'
+  ];
+  var say = lines.slice(); say[1] = 'Eu tenho '+PT.num(age)+' anos.';
+  var en = function(id){ return G.$('#'+id).selectedOptions[0].getAttribute('data-en'); };
+  var ens = ['Hi, my name is '+name+'.','I am '+age+' years old.','I am from '+en('fFrom')+'.','I live in '+en('fLive')+'.','I like to '+en('fLike')+'.'];
+  G.$('#fOut').innerHTML = '<div class="callout tip" style="margin-top:12px">'+lines.map(function(l,n){ return '<div class="sentence"><div class="tx"><div class="pt-s">'+G.esc(l)+'</div><div class="tr">'+G.esc(ens[n])+'</div></div>'+U.say(say[n])+'</div>'; }).join('')+'<p style="margin:10px 0 0"><button type="button" class="btn" id="fAll">▶ Ouvir tudo'+G.tr('Play all')+'</button></p></div>';
+  G.$('#fAll').addEventListener('click', function(){ G.TTS.seq(say.map(function(t){ return {text:t}; })); });
+});
+})();
+</script>

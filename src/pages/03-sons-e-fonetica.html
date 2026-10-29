@@ -1,0 +1,203 @@
+<h1>Sons e fonética<span class="tr">Sounds and phonetics</span></h1>
+<p class="sec-intro">Módulo 3 · Sounds and phonetics. O que muda do alemão e do inglês, o alfabeto fonético (IPA) com áudio e o que torna o sotaque brasileiro brasileiro.<span class="tr">What changes from German and English, the phonetic alphabet (IPA) with audio, and what makes the Brazilian accent Brazilian.</span></p>
+
+<div class="callout">
+  <b class="t">How to read the symbols</b>
+  <p>The <b>IPA</b> (International Phonetic Alphabet) writes one symbol per sound, between square brackets: <span class="ipa">[ˈka.zɐ]</span> is <span class="pt">casa</span>. The mark <span class="ipa">ˈ</span> comes before the stressed syllable. You do not need to memorize all of it; use it as a map to check how a word really sounds. Every card below plays an example.</p>
+</div>
+
+<h2>1. Vogais orais<span class="tr"> · Oral vowels</span></h2>
+<p>Brazilian Portuguese has seven stressed oral vowels. Click each one.</p>
+<div class="chips" id="vow"></div>
+<div class="callout de">
+  <b class="t">🇩🇪 You already have most of these sounds</b>
+  <p>Brazilian <span class="ipa">[ɛ]</span> = German “ä” in “Bär” · <span class="ipa">[e]</span> = “ee” in “Tee” · <span class="ipa">[ɔ]</span> = “o” in “Gott” · <span class="ipa">[o]</span> = “oo” in “Boot” · <span class="ipa">[u]</span> = “u” in “gut”. The main difference: Portuguese vowels do not get “long vs short” treatment, and unstressed vowels stay clear, not swallowed.</p>
+</div>
+
+<h3>Pares mínimos: um som muda o significado<span class="tr"> · Minimal pairs: one sound changes the meaning</span></h3>
+<div id="pairs"></div>
+<div id="qPairs"></div>
+
+<h2>2. O “e” e o “o” no fim da palavra<span class="tr"> · The “e” and “o” at the end of a word</span></h2>
+<p>This is the most noticeable Brazilian feature: unstressed final vowels are different from the spelling.</p>
+<div id="finals"></div>
+<div class="callout warn">
+  <b class="t">Common mistake for German speakers</b>
+  <p>German speakers often say a final <b>-e</b> like a schwa (as in “Blume”). In Brazil it is <b>“i”</b>: <span class="pt">leite</span> = “lêitchi”, <span class="pt">grande</span> = “grândji”, <span class="pt">noite</span> = “nôitchi”. Final <b>-o</b> sounds like <b>“u”</b>: <span class="pt">livro</span> = “lívru”.</p>
+</div>
+
+<h2>3. Vogais nasais<span class="tr"> · Nasal vowels</span></h2>
+<p>Air goes through the nose. Do <b>not</b> pronounce an extra “m” or “n”: the vowel itself is nasal, like in the German word “Restaurant” or “Balkon”.</p>
+<div class="chips" id="nas"></div>
+<div id="nasTbl"></div>
+
+<h2>4. Ditongos<span class="tr"> · Diphthongs</span></h2>
+<div class="chips" id="dit"></div>
+<div class="callout de">
+  <b class="t">🇩🇪 Not the same as German</b>
+  <p>Portuguese <b>ei</b> = [ej] (like “ay” in “day”), not German “ei” [aɪ] · <b>eu</b> = [ew], not German “eu” [ɔʏ] · <b>au</b> = [aw] like German “au”.</p>
+</div>
+
+<h2>5. Consoantes que mudam tudo<span class="tr"> · Consonants that change everything</span></h2>
+<div class="grid g2" id="special"></div>
+
+<h2>6. Tabela IPA do português do Brasil<span class="tr"> · IPA chart for Brazilian Portuguese</span></h2>
+<p>Filter by type and click any symbol to hear a word that contains it.</p>
+<div class="filters" id="filters" role="group" aria-label="Filtrar símbolos"></div>
+<div class="chips" id="ipaAll"></div>
+
+<h2>7. Qual é a sílaba tônica?<span class="tr"> · Which syllable is stressed?</span></h2>
+<p>The stressed syllable is the strongest. Click it. <b>Rule of thumb:</b> words ending in <b>a, e, o, as, es, os, am, em</b> are stressed on the second-to-last syllable; words ending in <b>i, u, l, r, z</b> or nasals (<b>ão, im, um</b>) on the last. An accent mark always wins.</p>
+<div class="tool" id="stressBox"></div>
+
+<h2>8. Trava-línguas<span class="tr"> · Tongue twisters</span></h2>
+<p>Traditional tongue twisters. Start slow with 🐢, then speed up. Try the 🎤 button in Chrome.</p>
+<div id="twist"></div>
+
+<h2>9. Teste de ouvido<span class="tr"> · Ear test</span></h2>
+<div id="qEar"></div>
+<div id="qRules"></div>
+
+<div class="callout prof">
+  <b class="t">Para a professora<span class="tr"> · For the teacher</span></b>
+  <p>Ordem sugerida: (1) <b>t/d + i</b> (tchi, dji), (2) <b>-e e -o finais</b>, (3) <b>nasais</b> (pão, mãe, bom), (4) <b>R forte</b>: o alemão pode usar o R uvular dele, que funciona bem no início de palavra e em “rr”, (5) <b>L final</b> = u. Peça repetição em coro curto e depois frases completas. Use espelho ou vídeo para as nasais. Mantenha o alfabeto fonético como consulta, não como prova.</p>
+  <p class="tr">Suggested order: (1) t/d + i (tchi, dji), (2) final -e and -o, (3) nasals (pão, mãe, bom), (4) strong R: the German speaker can use his uvular R, which works well at the start of words and in “rr”, (5) final L = u. Ask for short choral repetition first, then full sentences. Use a mirror or video for nasals. Keep the phonetic alphabet as a reference, not as a test.</p>
+</div>
+
+<button type="button" class="btn complete" data-complete>Marcar módulo como concluído</button>
+
+<script>
+(function(){
+var G = window.G, U = G.UI;
+function chips(el, arr){
+  el.innerHTML = arr.map(function(a){ return '<button type="button" class="chip" data-say="'+G.esc(a[1])+'" aria-label="'+G.esc(a[0]+' — '+a[1])+'"><span class="s">'+a[0]+'</span><span class="w"><b class="pt">'+a[1]+'</b>'+(G.gloss(a[1])?'<small class="tr">'+G.gloss(a[1])+'</small>':'')+'<small class="ipa">['+a[2]+']</small>'+(a[3]?'<small>'+a[3]+'</small>':'')+'</span></button>'; }).join('');
+}
+var VOW = [
+ ['i','vi','vi','German “Biene”'],['e','você','voˈse','German “Tee” (ê)'],['ɛ','café','kaˈfɛ','German “Bär” (é)'],
+ ['a','pá','pa','German “Tag”'],['ɔ','avó','aˈvɔ','German “Gott” (ó)'],['o','avô','aˈvo','German “Boot” (ô)'],['u','tu','tu','German “gut”']
+];
+chips(G.$('#vow'), VOW);
+
+U.table(G.$('#pairs'), ['Closed','Open','Meaning'], [
+ ['<span class="pt">avô</span> <span class="ipa">[aˈvo]</span> '+U.say('avô'),'<span class="pt">avó</span> <span class="ipa">[aˈvɔ]</span> '+U.say('avó'),'grandfather · grandmother'],
+ ['<span class="pt">ovo</span> <span class="ipa">[ˈovu]</span> '+U.say('ovo'),'<span class="pt">ovos</span> <span class="ipa">[ˈɔvus]</span> '+U.say('ovos'),'egg · eggs (the vowel changes in the plural!)'],
+ ['<span class="pt">olho</span> <span class="ipa">[ˈoʎu]</span> '+U.say('olho'),'<span class="pt">olhos</span> <span class="ipa">[ˈɔʎus]</span> '+U.say('olhos'),'eye · eyes'],
+ ['<span class="pt">pode</span> <span class="ipa">[ˈpɔdʒi]</span> '+U.say('pode'),'<span class="pt">pôde</span> <span class="ipa">[ˈpodʒi]</span> '+U.say('pôde'),'can · could (once)']
+]);
+G.Quiz.mount(G.$('#qPairs'), { id:'pares', questions:[
+  {q:'Listen. Who is it?', say:'avô', options:['grandfather (avô)','grandmother (avó)'], answer:0, keepOrder:true},
+  {q:'Listen. Who is it?', say:'avó', options:['grandfather (avô)','grandmother (avó)'], answer:1, keepOrder:true},
+  {q:'Listen. Singular or plural?', say:'ovos', options:['one egg (ovo)','eggs (ovos)'], answer:1, keepOrder:true},
+  {q:'Listen. Singular or plural?', say:'olho', options:['one eye (olho)','eyes (olhos)'], answer:0, keepOrder:true}
+]});
+
+U.table(G.$('#finals'), ['Written','Pronounced','Rule','Ouvir'], [
+ ['<span class="pt">leite</span>','<span class="ipa">[ˈlejtʃi]</span>','final -e → “i”',U.both('leite')],
+ ['<span class="pt">grande</span>','<span class="ipa">[ˈɡɾɐ̃dʒi]</span>','final -e → “i”, d → “dj”',U.both('grande')],
+ ['<span class="pt">livro</span>','<span class="ipa">[ˈlivɾu]</span>','final -o → “u”',U.both('livro')],
+ ['<span class="pt">casa</span>','<span class="ipa">[ˈkazɐ]</span>','final -a → short “ɐ”, like German “-er” in “Lehrer”',U.both('casa')],
+ ['<span class="pt">noite</span>','<span class="ipa">[ˈnojtʃi]</span>','t before “i” → “tch”',U.both('noite')],
+ ['<span class="pt">pequeno</span>','<span class="ipa">[peˈkenu]</span>','every vowel stays clear',U.both('pequeno')]
+]);
+
+chips(G.$('#nas'), [
+ ['ĩ','sim','sĩ','im, in'],['ẽ','bem','bẽj̃','em, en'],['ɐ̃','lã','lɐ̃','ã, an, am'],['õ','bom','bõ','om, on'],['ũ','um','ũ','um, un']
+]);
+U.table(G.$('#nasTbl'), ['Spelling','Example','Ouvir'], [
+ ['<b>ão</b>','<span class="pt">pão, mão, coração</span> <span class="ipa">[pɐ̃w̃]</span>',U.both('pão, mão, coração')],
+ ['<b>ães / ãe</b>','<span class="pt">mãe, pães</span> <span class="ipa">[mɐ̃j̃]</span>',U.both('mãe, pães')],
+ ['<b>ões</b>','<span class="pt">limões, botões, leões</span> <span class="ipa">[õj̃s]</span>',U.both('limões, botões')],
+ ['<b>m / n after a vowel</b>','<span class="pt">sim, bom, onde, campo</span>',U.both('sim, bom, onde, campo')]
+]);
+
+chips(G.$('#dit'), [
+ ['aj','pai','paj',''],['ej','lei','lej',''],['ɛj','ideia','iˈdɛjɐ',''],['oj','boi','boj',''],['uj','fui','fuj',''],
+ ['aw','pau','paw',''],['ew','meu','mew',''],['ɛw','céu','sɛw',''],['iw','viu','viw','']
+]);
+
+var special = [
+ ['t / d + “i”','Before the sound “i”, t becomes “tch” and d becomes “dj”.',['tia','dia','tarde','cidade','noite','dente','de'],'tia → “tchia” · dia → “djia” · cidade → “sidadji”'],
+ ['L at the end of a syllable','It sounds like “u” (like English “w”).',['Brasil','mil','sol','alto','falta','Raul'],'Brasil → “Brasiu” · alto → “áuto”'],
+ ['R','Strong at the start or as “rr” (like your German “r” or “ch” in “Bach”). A soft tap between vowels, like American “butter”.',['rato','carro','rua','caro','hora','porta'],'rato (strong) · caro (tap)'],
+ ['S and Z','“s” at the start of a word; “z” between vowels; German initial “s” is already “z”, so watch out!',['sapo','casa','mesa','zebra','luz'],'sapo [s] · casa [z]'],
+ ['ch · j · g(e/i)','“ch” = “sh” (not German “ch”); “j” and “g” before e/i = “zh” (French “j”).',['chuva','chave','janela','gente','gelo'],'chuva → “shuva” · janela → “zhanela”'],
+ ['lh · nh','lh ≈ “lli” in “million”; nh ≈ Spanish “ñ” or “ny” in “canyon”.',['filho','olho','banho','ninho','aranha'],'filho · banho'],
+ ['qu · gu','Before e/i the “u” is usually silent: queijo = “kêijo”. Before a/o it is pronounced: quando, água.',['queijo','quilo','guerra','quando','água'],'queijo · guerra · quando'],
+ ['H','Never pronounced at the start of a word.',['hotel','hoje','homem','hora'],'hotel → “otéu”']
+];
+G.$('#special').innerHTML = special.map(function(s){
+  return '<div class="card"><h3>'+s[0]+'</h3><p>'+s[1]+'</p><div class="chips">'+s[2].map(function(w){ return '<button type="button" class="chip" data-say="'+w+'" style="padding:4px 12px"><span class="pt">'+w+'</span>'+(G.gloss(w)?'<small class="tr"> '+G.gloss(w)+'</small>':'')+'</button>'; }).join('')+'</div><p class="muted" style="margin:8px 0 0">'+s[3]+'</p></div>';
+}).join('');
+
+/* full IPA */
+var ALL = [
+ ['Vogal oral', VOW],
+ ['Nasal', [['ĩ','sim','sĩ'],['ẽ','lenço','ˈlẽsu'],['ɐ̃','lã','lɐ̃'],['õ','bom','bõ'],['ũ','um','ũ']]],
+ ['Ditongo', [['aj','pai','paj'],['ej','lei','lej'],['ɔj','herói','eˈɾɔj'],['oj','boi','boj'],['uj','fui','fuj'],['aw','pau','paw'],['ew','meu','mew'],['ɐ̃w̃','pão','pɐ̃w̃'],['ɐ̃j̃','mãe','mɐ̃j̃'],['õj̃','põe','põj̃']]],
+ ['Plosiva', [['p','pai','paj'],['b','bola','ˈbɔlɐ'],['t','tatu','taˈtu'],['d','dado','ˈdadu'],['k','casa','ˈkazɐ'],['g','gato','ˈgatu']]],
+ ['Africada', [['tʃ','tia','ˈtʃiɐ'],['dʒ','dia','ˈdʒiɐ']]],
+ ['Fricativa', [['f','faca','ˈfakɐ'],['v','vaca','ˈvakɐ'],['s','sapo','ˈsapu'],['z','zebra','ˈzebɾɐ'],['ʃ','chuva','ˈʃuvɐ'],['ʒ','janela','ʒaˈnɛlɐ'],['x ~ h ~ ʁ','rato','ˈxatu']]],
+ ['Nasal cons.', [['m','mala','ˈmalɐ'],['n','navio','naˈviu'],['ɲ','banho','ˈbɐɲu']]],
+ ['Líquida', [['l','lua','ˈluɐ'],['ʎ','filho','ˈfiʎu'],['ɾ','caro','ˈkaɾu'],['w','Brasil','bɾaˈziw'],['j','pai','paj']]]
+];
+var types = ['Todos'].concat(ALL.map(function(a){ return a[0]; }));
+var FT = {'Todos':'All','Vogal oral':'Oral vowel','Nasal':'Nasal vowel','Ditongo':'Diphthong','Plosiva':'Plosive','Africada':'Affricate','Fricativa':'Fricative','Nasal cons.':'Nasal consonant','Líquida':'Liquid'};
+var fbox = G.$('#filters'), allBox = G.$('#ipaAll'), cur = 'Todos';
+function drawIpa(){
+  fbox.innerHTML = types.map(function(t){ return '<button type="button" data-t="'+t+'" aria-pressed="'+(t===cur)+'">'+t+(FT[t]?G.tr(FT[t]):'')+'</button>'; }).join('');
+  var arr = []; ALL.forEach(function(a){ if(cur==='Todos'||cur===a[0]) a[1].forEach(function(x){ arr.push([x[0],x[1],x[2],a[0]]); }); });
+  chips(allBox, arr);
+}
+fbox.addEventListener('click', function(e){ var b = e.target.closest('button[data-t]'); if(!b) return; cur = b.getAttribute('data-t'); drawIpa(); });
+drawIpa();
+allBox.insertAdjacentHTML('afterend','<p class="muted">O R inicial varia por região: [x], [h], [χ] ou [ʁ]. Todos são normais no Brasil.'+G.tr('The initial R varies by region: [x], [h], [χ] or [ʁ]. All are normal in Brazil.')+'</p>');
+
+/* stress finder */
+var SW = [
+ [['Bra','sil'],1],[['A','le','ma','nha'],2],[['por','tu','guês'],2],[['mú','si','ca'],0],[['a','le','mão'],2],
+ [['via','jar'],1],[['fa','mí','lia'],1],[['mo','rar'],1],[['ca','sa'],0],[['ca','fé'],1],[['bo','ni','to'],1],[['mo','ra','mos'],1]
+];
+var sb = G.$('#stressBox'); var order = G.shuffle(SW), si = 0, sc = 0;
+function drawStress(){
+  if(si >= order.length){ sb.innerHTML = '<div class="summary"><div class="pct">'+Math.round(sc/order.length*100)+'%</div><p><b>'+sc+' de '+order.length+'</b> na primeira tentativa.'+G.tr('on the first try')+'</p><button type="button" class="btn pri" id="stAgain">Tentar de novo'+G.tr('Try again')+'</button></div>'; G.$('#stAgain').addEventListener('click', function(){ order = G.shuffle(SW); si=0; sc=0; drawStress(); }); return; }
+  var w = order[si], word = w[0].join('');
+  sb.innerHTML = '<p class="muted">Palavra '+(si+1)+' de '+order.length+G.tr('Word '+(si+1)+' of '+order.length)+'</p><p class="stress" id="stSyl">'+w[0].map(function(s,k){ return '<button type="button" class="syl" data-k="'+k+'">'+s+'</button>'; }).join('')+'</p> '+U.say(word)+U.say(word,{slow:true})+'<div class="q-fb" hidden id="stFb"></div><div class="q-nav"><button type="button" class="btn next" id="stNext" hidden>Próxima'+G.tr('Next')+'</button></div>';
+  var tries = 0, done = false;
+  G.$$('.syl', sb).forEach(function(b){ b.addEventListener('click', function(){
+    if(done) return; var k = +b.getAttribute('data-k'); tries++;
+    if(k===w[1]){ b.classList.add('ok'); done = true; if(tries===1) sc++; var fb = G.$('#stFb'); fb.hidden=false; fb.className='q-fb ok'; fb.innerHTML='✔ Isso! A sílaba forte é <b>'+w[0][k]+'</b>.'+G.tr('Yes! The stressed syllable is '+w[0][k]); G.$('#stNext').hidden=false; }
+    else b.classList.add('bad');
+  }); });
+  G.$('#stNext').addEventListener('click', function(){ si++; drawStress(); });
+}
+drawStress();
+
+/* tongue twisters */
+var TW = [
+ ['O rato roeu a roupa do rei de Roma.','The mouse gnawed the king of Rome’s clothes. (practice: R)'],
+ ['Três pratos de trigo para três tigres tristes.','Three plates of wheat for three sad tigers. (practice: tr, i)'],
+ ['O sabiá não sabia que o sábio sabia que o sabiá sabia assobiar.','The thrush did not know that the sage knew that the thrush knew how to whistle. (practice: s, b)'],
+ ['A rua rosa de Roma é rara.','Short version for R training. (practice: R)']
+];
+G.$('#twist').innerHTML = TW.map(function(t,n){ return '<div class="sentence"><div class="tx"><div class="pt-s">'+t[0]+'</div><div class="en">'+t[1]+'</div><div class="listen" data-n="'+n+'"></div></div>'+U.say(t[0])+U.say(t[0],{slow:true})+'</div>'; }).join('');
+G.$$('#twist .listen').forEach(function(b){ G.Listen.attach(b, TW[+b.getAttribute('data-n')][0]); });
+
+/* ear quizzes */
+G.Quiz.mount(G.$('#qEar'), { id:'ouvido', shuffle:true, questions:[
+  {q:'Listen. Which word is it?', say:'tchau', options:['tchau','tau','chau'], answer:0, why:'In Brazil “tchau” is spelled with tch.'},
+  {q:'Listen. Which word is it?', say:'pão', options:['pau','pão','pano'], answer:1},
+  {q:'Listen. Which word is it?', say:'filho', options:['filo','fio','filho'], answer:2},
+  {q:'Listen. Which word is it?', say:'banho', options:['banho','bano','bambo'], answer:0},
+  {q:'Listen. Which word is it?', say:'janela', options:['chanela','janela','ganela'], answer:1},
+  {q:'Listen. Which word is it?', say:'chuva', options:['chuva','suva','juva'], answer:0}
+]});
+G.Quiz.mount(G.$('#qRules'), { id:'regras', shuffle:true, questions:[
+  {q:'How is <b>dia</b> pronounced in most of Brazil?', options:['“dee-a”','“djia”','“thia”'], answer:1, keepOrder:true},
+  {q:'How is <b>Brasil</b> pronounced?', options:['“Bra-zil” with a clear L','“Bra-ziu”','“Bra-zir”'], answer:1, keepOrder:true},
+  {q:'How does a final <b>-e</b> sound in <b>leite</b>?', options:['like German schwa (Blume)','like “i”','silent'], answer:1, keepOrder:true},
+  {q:'The letter <b>h</b> in <b>hotel</b> is…', options:['pronounced like German “h”','silent','like “sh”'], answer:1, keepOrder:true},
+  {q:'<b>Janela</b> starts with the sound…', options:['German “j” (y)','“zh” as in French “jour”','“dj” as in “jungle”'], answer:1, keepOrder:true, why:'It is [ʒ]: like in “Garage”.'},
+  {q:'The sound of <b>v</b> in <b>vaca</b> is like German…', options:['“V” in “Vater” (f)','“W” in “Wasser”','“F” in “Fisch”'], answer:1, keepOrder:true}
+]});
+})();
+</script>

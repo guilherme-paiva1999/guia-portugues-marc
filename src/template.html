@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Português do Brasil · Guia de aulas</title>
+<style>
+html,body{margin:0;height:100%;background:#f5f7f3}
+iframe{position:fixed;inset:0;width:100%;height:100%;border:0;display:none;background:#f5f7f3}
+iframe.on{display:block}
+</style>
+</head>
+<body>
+<noscript>Este guia precisa de JavaScript.</noscript>
+<script type="application/json" id="shell">{{SHELL_JSON}}</script>
+<script type="application/json" id="pages">{{PAGES_JSON}}</script>
+<script>
+(function(){
+  var shell = JSON.parse(document.getElementById('shell').textContent);
+  var pages = JSON.parse(document.getElementById('pages').textContent);
+  var order = {{ORDER_JSON}};
+  var nav = {{NAV_JSON}};
+  var frames = {};
+  function build(file){
+    var p = pages[file];
+    var navHtml = nav.map(function(n){ return '<a href="'+n[0]+'"'+(n[0]===file?' aria-current="page"':'')+'>'+n[1]+'<small class="tr">'+n[2]+'</small></a>'; }).join('');
+    return shell.replace('{{TITLE}}', function(){ return p.title; })
+      .replace('{{ID}}', function(){ return p.id; })
+      .replace('{{NAV}}', function(){ return navHtml; })
+      .replace('{{BODY}}', function(){ return p.body; });
+  }
+  function show(file, noHash){
+    if(!pages[file]) file = 'index.html';
+    order.forEach(function(f){ if(frames[f]) frames[f].classList.remove('on'); });
+    if(!frames[file]){
+      var fr = document.createElement('iframe');
+      fr.title = pages[file].title;
+      fr.setAttribute('allow','microphone');
+      fr.srcdoc = build(file);
+      document.body.appendChild(fr);
+      frames[file] = fr;
+    }
+    frames[file].classList.add('on');
+    document.title = pages[file].title + ' \u00b7 Portugu\u00eas do Brasil';
+    if(!noHash){ try{ history.pushState(null,'','#'+pages[file].id); }catch(e){ location.hash = pages[file].id; } }
+    try{ frames[file].contentWindow.focus(); }catch(e){}
+  }
+  function fromHash(){
+    var id = location.hash.replace('#','');
+    var f = order.filter(function(x){ return pages[x].id===id; })[0];
+    return f || 'index.html';
+  }
+  window.addEventListener('message', function(e){ if(e.data && e.data.guiaGo) show(e.data.guiaGo); });
+  window.addEventListener('popstate', function(){ show(fromHash(), true); });
+  window.addEventListener('hashchange', function(){ show(fromHash(), true); });
+  show(fromHash(), true);
+})();
+</script>
+</body>
+</html>

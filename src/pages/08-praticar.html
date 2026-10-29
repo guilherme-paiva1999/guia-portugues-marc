@@ -1,0 +1,138 @@
+<h1>Praticar<span class="tr">Practice</span></h1>
+<p class="sec-intro">Módulo 8 · Practice. Jogos de revisão para fazer em aula ou em casa. Tudo aqui mistura o que você aprendeu nos módulos anteriores.<span class="tr">Review games for class or home. Everything here mixes what you learned in the earlier modules.</span></p>
+
+<h2>1. Frase do dia<span class="tr"> · Sentence of the day</span></h2>
+<div class="tool">
+  <div id="fraseBox"></div>
+  <div class="row"><button type="button" class="btn pri" id="novaFrase">Outra frase<span class="tr"> · Another sentence</span></button></div>
+</div>
+
+<h2>2. Flashcards: vocabulário essencial<span class="tr"> · Flashcards: essential vocabulary</span></h2>
+<div id="fcAll"></div>
+
+<h2>3. Jogos de associação<span class="tr"> · Matching games</span></h2>
+<div id="m1"></div>
+<div id="m2"></div>
+<div id="m3"></div>
+
+<h2>4. Ditado<span class="tr"> · Dictation</span></h2>
+<p>Listen and type the whole sentence. Accents count, but a missing accent is only a small warning.</p>
+<div id="dict"></div>
+
+<h2>5. Monte as frases<span class="tr"> · Build the sentences</span></h2>
+<div id="ro"></div>
+
+<h2>6. Desafio de fala<span class="tr"> · Speaking challenge</span></h2>
+<p>Read the sentence out loud (or press 🔊 first). In Chrome or Edge the 🎤 button tells you which words it understood.</p>
+<div class="tool" id="speakBox"></div>
+
+<h2>7. Revisão geral<span class="tr"> · General review</span></h2>
+<div id="qAll"></div>
+
+<div class="callout prof">
+  <b class="t">Para a professora<span class="tr"> · For the teacher</span></b>
+  <p>Sugestão: abra a aula com 5 minutos de “Frase do dia” (o Marc repete e depois varia uma palavra), feche com o ditado ou com a revisão geral. Anote os itens que ele erra duas vezes e traga de volta na aula seguinte.</p>
+  <p class="tr">Suggestion: open the lesson with 5 minutes of “Sentence of the day” (Marc repeats, then changes one word), close with dictation or the general review. Note the items he gets wrong twice and bring them back next lesson.</p>
+</div>
+
+<button type="button" class="btn complete" data-complete>Marcar módulo como concluído</button>
+
+<script>
+(function(){
+var G = window.G, U = G.UI, PT = G.PT;
+var F = [
+ ['Eu moro em Portugal há dois anos.','I have lived in Portugal for two years.'],
+ ['Eu quero aprender a falar português como um brasileiro.','I want to learn to speak Portuguese like a Brazilian.'],
+ ['Tudo bem? Tudo ótimo, e você?','All good? Great, and you?'],
+ ['Pode repetir, por favor? Mais devagar.','Can you repeat, please? Slower.'],
+ ['Eu gosto de viajar e conhecer pessoas.','I like travelling and meeting people.'],
+ ['Hoje eu estou muito bem.','Today I am very well.'],
+ ['Onde fica o banheiro?','Where is the bathroom?'],
+ ['Quanto custa? Aceita Pix?','How much is it? Do you accept Pix?'],
+ ['Eu vou morar no Brasil com minha família.','I am going to live in Brazil with my family.'],
+ ['Que horas são? São oito e meia.','What time is it? It is half past eight.']
+];
+var fi = 0;
+function frase(){ var f = F[fi % F.length]; fi = (fi+1) % F.length; G.$('#fraseBox').innerHTML = '<p class="big-say" style="margin:0 0 4px">'+f[0]+' '+U.both(f[0])+'</p><p class="en" style="margin:0 0 8px">'+f[1]+'</p><div class="listen" id="lf"></div>'; G.Listen.attach(G.$('#lf'), f[0]); }
+fi = Math.floor(Math.random()*F.length); frase();
+G.$('#novaFrase').addEventListener('click', frase);
+
+G.Cards.mount(G.$('#fcAll'), { id:'essencial', deck:[
+ {f:'morar',b:'to live (reside)',say:'morar',n:'Eu moro em Portugal.'},
+ {f:'viajar',b:'to travel',say:'viajar',n:'Eu gosto de viajar.'},
+ {f:'querer',b:'to want',say:'querer',n:'Eu quero aprender.'},
+ {f:'aprender',b:'to learn',say:'aprender'},
+ {f:'falar',b:'to speak',say:'falar'},
+ {f:'gostar de',b:'to like',say:'gostar de'},
+ {f:'ficar',b:'to stay / to be located',say:'ficar'},
+ {f:'ter',b:'to have',say:'ter',n:'Tenho 48 anos.'},
+ {f:'ir',b:'to go',say:'ir'},
+ {f:'vir',b:'to come',say:'vir'},
+ {f:'entender',b:'to understand',say:'entender',n:'Eu não entendi.'},
+ {f:'precisar de',b:'to need',say:'precisar de'},
+ {f:'ajuda',b:'help',say:'ajuda',n:'Preciso de ajuda.'},
+ {f:'casa',b:'house, home',say:'casa'},
+ {f:'trabalho',b:'work, job',say:'trabalho'},
+ {f:'amigo / amiga',b:'friend',say:'amigo, amiga'},
+ {f:'família',b:'family',say:'família'},
+ {f:'cidade',b:'city',say:'cidade'},
+ {f:'país',b:'country',say:'país'},
+ {f:'praia',b:'beach',say:'praia'},
+ {f:'água',b:'water',say:'água'},
+ {f:'comida',b:'food',say:'comida'},
+ {f:'hoje',b:'today',say:'hoje'},
+ {f:'amanhã',b:'tomorrow',say:'amanhã'},
+ {f:'ontem',b:'yesterday',say:'ontem'},
+ {f:'agora',b:'now',say:'agora'},
+ {f:'muito',b:'very, a lot',say:'muito'},
+ {f:'pouco',b:'a little',say:'pouco'},
+ {f:'bom / boa',b:'good',say:'bom, boa'},
+ {f:'grande',b:'big',say:'grande'},
+ {f:'novo / nova',b:'new',say:'novo, nova'},
+ {f:'saudade',b:'longing, missing someone or something',say:'saudade',n:'A famous Portuguese word: “Tenho saudade da Alemanha.”'}
+]});
+
+G.Match.mount(G.$('#m1'), { title:'Países e nacionalidades'+G.tr('Countries and nationalities'), pairs:[['Alemanha'+G.trB('Germany'),'alemão / alemã'],['Brasil'+G.trB('Brazil'),'brasileiro / brasileira'],['Portugal'+G.trB('Portugal'),'português / portuguesa'],['Vietnã'+G.trB('Vietnam'),'vietnamita'],['Malásia'+G.trB('Malaysia'),'malaio / malaia'],['França'+G.trB('France'),'francês / francesa']] });
+G.Match.mount(G.$('#m2'), { title:'Números'+G.tr('Numbers'), sayLeft:true, pairs:[['7','sete'],['13','treze'],['16','dezesseis'],['48','quarenta e oito'],['77','setenta e sete'],['100','cem']] });
+G.Match.mount(G.$('#m3'), { title:'Verbos: infinitivo e “eu”'+G.tr('Verbs: infinitive and “I”'), pairs:[['morar'+G.trB('to live'),'moro'],['ter'+G.trB('to have'),'tenho'],['ir'+G.trB('to go'),'vou'],['querer'+G.trB('to want'),'quero'],['fazer'+G.trB('to do'),'faço'],['estar'+G.trB('to be'),'estou']] });
+
+var D = [
+ 'Eu moro em Portugal.','Meu nome é Marc.','Eu sou da Alemanha.','Eu tenho quarenta e oito anos.','Eu quero morar no Brasil.','Tudo bem, e você?',
+ 'Pode repetir, por favor?','Eu gosto de viajar.','Onde você mora?','Muito prazer.','Boa tarde, tudo bem?','Eu não entendi.'
+];
+var DE = {'Eu moro em Portugal.':'I live in Portugal.','Meu nome é Marc.':'My name is Marc.','Eu sou da Alemanha.':'I am from Germany.','Eu tenho quarenta e oito anos.':'I am forty-eight years old.','Eu quero morar no Brasil.':'I want to live in Brazil.','Tudo bem, e você?':'Good, and you?','Pode repetir, por favor?':'Can you repeat, please?','Eu gosto de viajar.':'I like to travel.','Onde você mora?':'Where do you live?','Muito prazer.':'Nice to meet you.','Boa tarde, tudo bem?':'Good afternoon, how are you?','Eu não entendi.':'I did not understand.'};
+G.Quiz.mount(G.$('#dict'), { id:'ditado-frases', limit:6, questions: D.map(function(s){ return {type:'type', q:'Type the sentence you hear.', say:s, answer:s, why:'<span class="tr">'+DE[s]+'</span>'}; }) });
+
+G.Reorder.mount(G.$('#ro'), [
+ {pt:'Eu quero aprender português do Brasil.',en:'I want to learn Brazilian Portuguese.'},
+ {pt:'Você mora em Portugal há dois anos?',en:'Have you lived in Portugal for two years?'},
+ {pt:'Eu não falo muito bem ainda.',en:'I do not speak very well yet.'},
+ {pt:'A gente vai morar no Brasil.',en:'We are going to live in Brazil.'},
+ {pt:'Quanto custa o ônibus?',en:'How much is the bus?'}
+]);
+
+var S = ['Eu moro em Portugal há dois anos.','Meu objetivo é morar no Brasil.','Eu gosto muito de viajar.','Prazer em conhecer você!','Tchau, até amanhã!','O rato roeu a roupa do rei de Roma.','Três pratos de trigo para três tigres tristes.','Eu moro no Brasil.'];
+var SE = {'Eu moro em Portugal há dois anos.':'I have lived in Portugal for two years.','Meu objetivo é morar no Brasil.':'My goal is to live in Brazil.','Eu gosto muito de viajar.':'I like travelling a lot.','Prazer em conhecer você!':'Nice to meet you!','Tchau, até amanhã!':'Bye, see you tomorrow!','O rato roeu a roupa do rei de Roma.':'The mouse gnawed the clothes of the king of Rome.','Três pratos de trigo para três tigres tristes.':'Three plates of wheat for three sad tigers.','Eu moro no Brasil.':'I live in Brazil.'};
+var si = 0, box = G.$('#speakBox');
+function speakRound(){ var s = S[si % S.length]; si++; box.innerHTML = '<p class="big-say" style="margin:0 0 8px">'+s+' '+U.both(s)+'</p><p class="tr">'+SE[s]+'</p><div class="listen" id="ls"></div><div class="row"><button type="button" class="btn" id="nextS">Próxima frase'+G.tr('Next sentence')+'</button></div>'; G.Listen.attach(G.$('#ls'), s); G.$('#nextS').addEventListener('click', speakRound); }
+si = Math.floor(Math.random()*S.length); speakRound();
+
+G.Quiz.mount(G.$('#qAll'), { id:'revisao', limit:12, questions:[
+ {q:'How do you say “Good morning”?', options:['Boa tarde','Bom dia','Boa noite'], answer:1, keepOrder:true},
+ {q:'Which letter is <b>agá</b>?', options:['G','H','J'], answer:1, keepOrder:true},
+ {q:'How is <b>tia</b> pronounced in Brazil?', options:['“tia”','“tchia”','“sia”'], answer:1, keepOrder:true},
+ {q:'<b>Eu ___ da Alemanha.</b>', options:['sou','estou','tenho'], answer:0, keepOrder:true},
+ {q:'<b>Eu ___ em Portugal.</b> (location)', options:['sou','estou','tenho'], answer:1, keepOrder:true},
+ {q:'<b>Eu ___ 48 anos.</b>', options:['sou','estou','tenho'], answer:2, keepOrder:true},
+ {q:'I live <b>in</b> Brazil.', options:['Eu moro em Brasil.','Eu moro no Brasil.','Eu moro na Brasil.'], answer:1, keepOrder:true},
+ {q:'Which means “bus” in Brazil?', options:['autocarro','ônibus','comboio'], answer:1, keepOrder:true},
+ {q:'Listen: which number?', say:'quarenta e oito', options:['18','28','48','58'], answer:2, keepOrder:true},
+ {q:'Which is the Brazilian way to say “I am studying”?', options:['Estou a estudar','Estou estudando','Estudo a estar'], answer:1, keepOrder:true},
+ {q:'Plural of <b>pão</b>:', options:['pãos','pães','pões'], answer:1, keepOrder:true},
+ {q:'A woman says thank you:', options:['obrigado','obrigada','obrigade'], answer:1, keepOrder:true},
+ {q:'<b>Por que</b> or <b>porque</b>? “___ você quer aprender português?”', options:['Por que','Porque'], answer:0, keepOrder:true},
+ {q:'The Brazilian sound of final <b>l</b> in <b>Brasil</b> is…', options:['l','u','r'], answer:1, keepOrder:true},
+ {q:'Listen: which day?', say:'sexta-feira', options:['segunda-feira','quinta-feira','sexta-feira'], answer:2, keepOrder:true}
+]});
+})();
+</script>

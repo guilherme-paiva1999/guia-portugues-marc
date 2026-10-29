@@ -1,0 +1,183 @@
+<h1>Gramática básica<span class="tr">Basic grammar</span></h1>
+<p class="sec-intro">Módulo 5 · Basic grammar. Só o que um iniciante precisa para formar frases como as do texto do Marc, no português do Brasil.<span class="tr">Only what a beginner needs to build sentences like those in Marc's text, in Brazilian Portuguese.</span></p>
+
+<h2>1. Pronomes<span class="tr"> · Pronouns</span></h2>
+<div id="pron"></div>
+<div class="callout tip">
+  <b class="t">Brasil: você, não tu</b>
+  <p>In most of Brazil <span class="pt">você</span> is the normal “you”, with the same verb form as <i>ele/ela</i>: <span class="pt">você mora</span>. In Portugal you hear <span class="pt">tu moras</span> all the time. Some regions of Brazil, especially the South, also use <span class="pt">tu</span>, usually with the <i>você</i> verb form (“tu mora”). Learn <b>você</b> first. In everyday speech, <span class="pt">a gente</span> = “we” and takes the <i>ele</i> form: <span class="pt">a gente mora</span>.</p>
+</div>
+
+<h2>2. Ser e estar<span class="tr"> · Ser and estar (to be)</span></h2>
+<p>Both mean “to be”. German also has only one verb (“sein”), so this needs attention.</p>
+<div class="grid g2">
+  <div class="card"><h3>SER</h3><div id="serTbl"></div><ul style="margin:8px 0 0;padding-left:1.1em"><li>identity: <span class="pt">Eu sou o Marc.</span><span class="tr"> (I am Marc.)</span></li><li>origin / nationality: <span class="pt">Sou alemão.</span><span class="tr"> (I am German.)</span></li><li>profession, characteristics: <span class="pt">Ela é simpática.</span><span class="tr"> (She is nice.)</span></li><li>date and time: <span class="pt">Hoje é quarta-feira.</span><span class="tr"> (Today is Wednesday.)</span></li></ul></div>
+  <div class="card"><h3>ESTAR</h3><div id="estarTbl"></div><ul style="margin:8px 0 0;padding-left:1.1em"><li>location: <span class="pt">Estou em Portugal.</span><span class="tr"> (I am in Portugal.)</span></li><li>temporary state, feeling: <span class="pt">Estou cansado.</span><span class="tr"> (I am tired.)</span></li><li>action in progress: <span class="pt">Estou estudando.</span><span class="tr"> (I am studying.)</span></li></ul></div>
+</div>
+<div class="callout de">
+  <b class="t">🇩🇪 Brazil says “estou estudando”</b>
+  <p>For “I am studying” Brazilians use <b>estar + -ando</b> (<span class="pt">estou estudando</span>). In Portugal it is <span class="pt">estou a estudar</span>. See <a href="07-brasil-x-portugal.html">Brasil × Portugal</a>.</p>
+</div>
+<p>Choose the right form.</p>
+<div id="clSer"></div>
+
+<h2>3. Verbos do dia a dia<span class="tr"> · Everyday verbs</span></h2>
+<p>Pick a verb. In Brazil you only need four forms in the present: <b>eu · você/ele/ela/a gente · nós · vocês/eles/elas</b>.</p>
+<div class="tool">
+  <div class="row"><label for="verbSel">Verbo</label><select id="verbSel"></select><span id="verbMeaning" class="muted"></span></div>
+  <div id="verbTbl"></div>
+</div>
+<h3>Os três grupos regulares<span class="tr"> · The three regular groups</span></h3>
+<div id="regular"></div>
+<div id="qVerbs"></div>
+
+<h2>4. Artigos, gênero e plural<span class="tr"> · Articles, gender and plural</span></h2>
+<div class="grid g2">
+  <div class="card"><h3>Artigos<span class="tr"> · Articles</span></h3><div id="art"></div></div>
+  <div class="card"><h3>Plural</h3><div id="plural"></div></div>
+</div>
+<h3>Nacionalidades<span class="tr"> · Nationalities</span></h3>
+<div id="nat"></div>
+<div id="qGender"></div>
+
+<h2>5. Países e contrações<span class="tr"> · Countries and contractions</span></h2>
+<p>With countries you will say <span class="pt">no Brasil</span>, <span class="pt">na Alemanha</span>, <span class="pt">em Portugal</span>. The preposition and the article merge.</p>
+<div id="countries"></div>
+<div id="contr"></div>
+<div id="clContr"></div>
+
+<h2>6. Palavras interrogativas<span class="tr"> · Question words</span></h2>
+<div id="qw"></div>
+<div id="mQw"></div>
+<div class="callout warn">
+  <b class="t">por que × porque</b>
+  <p><span class="pt">Por que você quer morar no Brasil?</span> (question, two words) · <span class="pt">Porque eu gosto do país.</span> (answer, one word).</p>
+</div>
+
+<h2>7. Negação<span class="tr"> · Negation</span></h2>
+<p>Put <b>não</b> before the verb. “Not yet” is <b>ainda não</b>.</p>
+<div id="neg"></div>
+
+<div class="callout prof">
+  <b class="t">Para a professora<span class="tr"> · For the teacher</span></b>
+  <p>Ordem sugerida: pronomes → ser/estar → ter e morar/falar/gostar → artigos e contrações → perguntas. Use o texto do Marc como fonte de frases reais. Evite tabelas com <i>tu</i> e <i>vós</i> neste nível. Erros prováveis: dizer “eu sou 48 anos” (alemão: “ich bin 48”), omitir o artigo (“moro Brasil”), usar “gostar” sem “de”, e “eu quero para aprender”.</p>
+  <p class="tr">Suggested order: pronouns → ser/estar → ter and morar/falar/gostar → articles and contractions → questions. Use Marc’s text as a source of real sentences. Avoid tables with tu and vós at this level. Likely errors: saying “eu sou 48 anos” (German: “ich bin 48”), omitting the article (“moro Brasil”), using “gostar” without “de”, and “eu quero para aprender”.</p>
+</div>
+
+<button type="button" class="btn complete" data-complete>Marcar módulo como concluído</button>
+
+<script>
+(function(){
+var G = window.G, U = G.UI;
+U.table(G.$('#pron'), ['Português','English','Exemplo','Ouvir'], [
+ ['<b>eu</b>','I','Eu moro em Portugal.'+G.trB('I live in Portugal.'),U.say('Eu moro em Portugal.')],
+ ['<b>você</b>','you','Você mora no Brasil?'+G.trB('Do you live in Brazil?'),U.say('Você mora no Brasil?')],
+ ['<b>ele / ela</b>','he / she','Ela é brasileira.'+G.trB('She is Brazilian.'),U.say('Ela é brasileira.')],
+ ['<b>a gente</b>','we (informal)','A gente mora aqui.'+G.trB('We live here.'),U.say('A gente mora aqui.')],
+ ['<b>nós</b>','we','Nós moramos aqui.'+G.trB('We live here.'),U.say('Nós moramos aqui.')],
+ ['<b>vocês</b>','you (plural)','Vocês moram aqui?'+G.trB('Do you (pl.) live here?'),U.say('Vocês moram aqui?')],
+ ['<b>eles / elas</b>','they','Eles são alemães.'+G.trB('They are German.'),U.say('Eles são alemães.')],
+ ['<b>o senhor / a senhora</b>','you (formal)','A senhora é de onde?'+G.trB('Where are you from, madam?'),U.say('A senhora é de onde?')]
+]);
+
+function conj(el, rows){ U.table(el, ['','Forma',''], rows.map(function(r){ return [r[0],'<b class="pt">'+r[1]+'</b>',U.say(r[0]+' '+r[1])]; })); }
+conj(G.$('#serTbl'), [['eu','sou'],['você / ele / ela / a gente','é'],['nós','somos'],['vocês / eles / elas','são']]);
+conj(G.$('#estarTbl'), [['eu','estou'],['você / ele / ela / a gente','está'],['nós','estamos'],['vocês / eles / elas','estão']]);
+G.Cloze.mount(G.$('#clSer'), { items:[
+ {t:'Eu [[sou]] alemão.', choices:['sou','estou','é','está'], en:'I am German.'},
+ {t:'Eu [[estou]] em Portugal.', choices:['sou','estou','é','está'], en:'I am in Portugal.'},
+ {t:'Ela [[é]] brasileira.', choices:['é','está','sou','estou'], en:'She is Brazilian.'},
+ {t:'Hoje [[é]] quarta-feira.', choices:['é','está','são','estão'], en:'Today is Wednesday.'},
+ {t:'Nós [[estamos]] em casa.', choices:['somos','estamos','são','estão'], en:'We are at home.'},
+ {t:'Vocês [[são]] de onde?', choices:['são','estão','é','está'], en:'Where are you (pl.) from?'},
+ {t:'Eu [[estou]] cansado hoje.', choices:['sou','estou','é','está'], en:'I am tired today.'}
+]});
+
+/* verb conjugator */
+var VB = {
+ 'ser':['sou','é','somos','são','to be'],'estar':['estou','está','estamos','estão','to be (state/place)'],
+ 'ter':['tenho','tem','temos','têm','to have'],'ir':['vou','vai','vamos','vão','to go'],
+ 'querer':['quero','quer','queremos','querem','to want'],'morar':['moro','mora','moramos','moram','to live (reside)'],
+ 'falar':['falo','fala','falamos','falam','to speak'],'gostar (de)':['gosto','gosta','gostamos','gostam','to like'],
+ 'fazer':['faço','faz','fazemos','fazem','to do / make'],'poder':['posso','pode','podemos','podem','can / to be able'],
+ 'viajar':['viajo','viaja','viajamos','viajam','to travel'],'aprender':['aprendo','aprende','aprendemos','aprendem','to learn']
+};
+var vs = G.$('#verbSel'); vs.innerHTML = Object.keys(VB).map(function(k){ return '<option>'+k+'</option>'; }).join('');
+function drawVerb(){ var k = vs.value, f = VB[k]; G.$('#verbMeaning').textContent = '= ' + f[4];
+  var ex = {'ser':'Eu sou alemão.','estar':'Eu estou aqui.','ter':'Eu tenho 48 anos.','ir':'Eu vou ao Brasil.','querer':'Eu quero aprender.','morar':'Eu moro em Portugal.','falar':'Eu falo inglês.','gostar (de)':'Eu gosto de viajar.','fazer':'Eu faço aula.','poder':'Eu posso ajudar.','viajar':'Eu viajo muito.','aprender':'Eu aprendo português.'}[k];
+  var exE = {'ser':'I am German.','estar':'I am here.','ter':'I am 48 years old.','ir':'I am going to Brazil.','querer':'I want to learn.','morar':'I live in Portugal.','falar':'I speak English.','gostar (de)':'I like to travel.','fazer':'I take a class.','poder':'I can help.','viajar':'I travel a lot.','aprender':'I learn Portuguese.'}[k];
+  conj(G.$('#verbTbl'), [['eu',f[0]],['você / ele / ela / a gente',f[1]],['nós',f[2]],['vocês / eles / elas',f[3]]]);
+  G.$('#verbTbl').insertAdjacentHTML('beforeend','<p style="margin:0"><b>Exemplo:</b>'+G.tr('Example')+' <span class="pt">'+ex+'</span> '+U.both(ex)+G.trB(exE)+'</p>'); }
+vs.addEventListener('change', drawVerb); drawVerb();
+
+U.table(G.$('#regular'), ['','-AR falar','-ER aprender','-IR partir'], [
+ ['eu','falo','aprendo','parto'],['você / ele / ela','fala','aprende','parte'],['nós','falamos','aprendemos','partimos'],['vocês / eles','falam','aprendem','partem']
+].map(function(r,i){ return i===0?r:r; }));
+var qv = [];
+['morar','falar','gostar (de)','querer','ter','ir','ser','estar','fazer','poder'].forEach(function(v){
+  var f = VB[v];
+  qv.push({type:'type', q:'<b>'+v.replace(' (de)','')+'</b> · <i>eu</i> →', answer:f[0], placeholder:'eu…'});
+  qv.push({type:'type', q:'<b>'+v.replace(' (de)','')+'</b> · <i>nós</i> →', answer:f[2], placeholder:'nós…'});
+  qv.push({type:'type', q:'<b>'+v.replace(' (de)','')+'</b> · <i>vocês</i> →', answer:f[3], placeholder:'vocês…'});
+});
+G.Quiz.mount(G.$('#qVerbs'), { id:'verbos', questions:qv, limit:8 });
+
+/* articles & plural */
+U.table(G.$('#art'), ['','m.','f.'], [['the (sg.)','<b>o</b> livro','<b>a</b> casa'],['the (pl.)','<b>os</b> livros','<b>as</b> casas'],['a (sg.)','<b>um</b> livro','<b>uma</b> casa'],['some (pl.)','<b>uns</b> livros','<b>umas</b> casas']]);
+U.table(G.$('#plural'), ['Ending','Plural','Example'], [
+ ['vowel','+ s','casa → casas'],['r, z','+ es','mulher → mulheres'],['ão','ões · ães · ãos','limão → limões · pão → pães · mão → mãos'],['m','ns','homem → homens'],['l','is','animal → animais']
+]);
+U.table(G.$('#nat'), ['País','Masculino','Feminino','Ouvir'], [
+ ['Alemanha'+G.trB('Germany'),'alemão','alemã',U.say('alemão, alemã')],
+ ['Brasil'+G.trB('Brazil'),'brasileiro','brasileira',U.say('brasileiro, brasileira')],
+ ['Portugal'+G.trB('Portugal'),'português','portuguesa',U.say('português, portuguesa')],
+ ['Vietnã'+G.trB('Vietnam'),'vietnamita','vietnamita',U.say('vietnamita')],
+ ['Malásia'+G.trB('Malaysia'),'malaio','malaia',U.say('malaio, malaia')],
+ ['Inglaterra'+G.trB('England'),'inglês','inglesa',U.say('inglês, inglesa')],
+ ['França'+G.trB('France'),'francês','francesa',U.say('francês, francesa')]
+]);
+G.Quiz.mount(G.$('#qGender'), { id:'genero', shuffle:true, questions:[
+ {q:'<b>__ casa</b> (the house)', options:['o','a','os'], answer:1, keepOrder:true},
+ {q:'<b>__ problema</b> (the problem)', options:['o','a','as'], answer:0, keepOrder:true, why:'Words in <i>-ma</i> from Greek are masculine: o problema, o tema.'},
+ {q:'<b>__ mão</b> (the hand)', options:['o','a','os'], answer:1, keepOrder:true, why:'<i>A mão</i> is feminine, plural <i>as mãos</i>.'},
+ {q:'Plural of <b>pão</b>:', options:['pãos','pões','pães'], answer:2, keepOrder:true},
+ {q:'Plural of <b>animal</b>:', options:['animals','animais','animales'], answer:1, keepOrder:true},
+ {q:'A woman from Germany is…', options:['alemão','alemã','alemana'], answer:1, keepOrder:true},
+ {q:'<b>Eu sou ___</b> (a man from Brazil)', options:['brasileira','brasileiro','brasileiros'], answer:1, keepOrder:true}
+]});
+
+/* countries and contractions */
+U.table(G.$('#countries'), ['País','Artigo','de / from','em / in','Ouvir'], [
+ ['Alemanha'+G.trB('Germany'),'a','<b>da</b> Alemanha','<b>na</b> Alemanha',U.say('Eu sou da Alemanha. Moro na Alemanha.')],
+ ['Brasil'+G.trB('Brazil'),'o','<b>do</b> Brasil','<b>no</b> Brasil',U.say('Eu sou do Brasil. Moro no Brasil.')],
+ ['Portugal','—','<b>de</b> Portugal','<b>em</b> Portugal',U.say('Eu sou de Portugal. Moro em Portugal.')],
+ ['Vietnã'+G.trB('Vietnam'),'o','<b>do</b> Vietnã','<b>no</b> Vietnã',U.say('Eu sou do Vietnã. Moro no Vietnã.')],
+ ['Malásia'+G.trB('Malaysia'),'a','<b>da</b> Malásia','<b>na</b> Malásia',U.say('Eu sou da Malásia. Moro na Malásia.')],
+ ['Ásia'+G.trB('Asia'),'a','<b>da</b> Ásia','<b>na</b> Ásia',U.say('Eu sou da Ásia. Moro na Ásia.')],
+ ['Estados Unidos'+G.trB('United States'),'os','<b>dos</b> Estados Unidos','<b>nos</b> Estados Unidos',U.say('Eu sou dos Estados Unidos. Moro nos Estados Unidos.')]
+]);
+U.table(G.$('#contr'), ['Preposition','+ o / os','+ a / as','+ um / uma'], [
+ ['de (of, from)','do / dos','da / das','dum / duma'],['em (in, on)','no / nos','na / nas','num / numa'],['a (to)','ao / aos','à / às','—'],['por (by, through)','pelo / pelos','pela / pelas','—']
+]);
+G.Cloze.mount(G.$('#clContr'), { items:[
+ {t:'Eu moro [[no]] Brasil.', choices:['no','na','em','nos'], en:'I live in Brazil.'},
+ {t:'Ela é [[da]] Alemanha.', choices:['do','da','de','das'], en:'She is from Germany.'},
+ {t:'Morei [[na]] Malásia.', choices:['no','na','em','nas'], en:'I lived in Malaysia.'},
+ {t:'Vou [[ao]] mercado. (a + o)', choices:['ao','à','no','do'], en:'I go to the market.'},
+ {t:'Eu sou [[de]] Portugal.', choices:['do','da','de','no'], en:'I am from Portugal.'}
+]});
+
+/* question words */
+var QW = [['Quem?','Who?','Quem é você?','Who are you?'],['O que?','What?','O que você faz?','What do you do?'],['Onde?','Where?','Onde você mora?','Where do you live?'],['Quando?','When?','Quando você vai?','When are you going?'],['Como?','How?','Como você se chama?','What is your name?'],['Por que?','Why?','Por que você quer morar no Brasil?','Why do you want to live in Brazil?'],['Qual / Quais?','Which?','Qual é o seu nome?','What is your name?'],['Quanto?','How much / many?','Quantos anos você tem?','How old are you?']];
+U.table(G.$('#qw'), ['Português','English','Exemplo','Ouvir'], QW.map(function(q){ return ['<b>'+q[0]+'</b>',q[1],'<span class="pt">'+q[2]+'</span>'+G.trB(q[3]),U.both(q[2])]; }));
+G.Match.mount(G.$('#mQw'), { pairs:[['Onde você mora?'+G.trB('Where do you live?'),'Em Portugal.'+G.trB('In Portugal.')],['Quantos anos você tem?'+G.trB('How old are you?'),'Quarenta e oito.'+G.trB('Forty-eight.')],['De onde você é?'+G.trB('Where are you from?'),'Da Alemanha.'+G.trB('From Germany.')],['Quando você vai?'+G.trB('When are you going?'),'Em dezembro.'+G.trB('In December.')],['Por que você estuda português?'+G.trB('Why do you study Portuguese?'),'Porque quero morar no Brasil.'+G.trB('Because I want to live in Brazil.')]], title:'Match question and answer' });
+
+U.table(G.$('#neg'), ['Português','English','Ouvir'], [
+ ['<span class="pt">Eu não falo português muito bem.</span>','I do not speak Portuguese very well.',U.both('Eu não falo português muito bem.')],
+ ['<span class="pt">Eu ainda não moro no Brasil.</span>','I do not live in Brazil yet.',U.both('Eu ainda não moro no Brasil.')],
+ ['<span class="pt">Não, obrigado.</span>','No, thank you.',U.both('Não, obrigado.')],
+ ['<span class="pt">Eu não entendi nada.</span>','I did not understand anything. (double negative is normal)',U.both('Eu não entendi nada.')],
+ ['<span class="pt">Eu nunca fui ao Brasil.</span>','I have never been to Brazil.',U.both('Eu nunca fui ao Brasil.')]
+]);
+})();
+</script>

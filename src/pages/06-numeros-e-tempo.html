@@ -1,0 +1,165 @@
+<h1>Números e tempo<span class="tr">Numbers and time</span></h1>
+<p class="sec-intro">Módulo 6 · Numbers, age, dates, time and money. Tudo o que o Marc precisa para dizer a idade, o ano em que nasceu, a data de hoje, as horas e os preços.<span class="tr">Everything Marc needs to say his age, birth year, today's date, the time and prices.</span></p>
+
+<h2>1. De zero a vinte<span class="tr"> · From zero to twenty</span></h2>
+<div id="n20"></div>
+<div class="callout tip">
+  <b class="t">Spelling in Brazil</b>
+  <p>16, 17 and 19 are <span class="pt">dezesseis, dezessete, dezenove</span> in Brazil (<i>dezasseis, dezassete, dezanove</i> in Portugal). 14 can be <span class="pt">catorze</span> or <span class="pt">quatorze</span>. And <b>1 and 2</b> change with gender: <span class="pt">um / uma</span>, <span class="pt">dois / duas</span>.</p>
+</div>
+
+<h2>2. Dezenas e centenas<span class="tr"> · Tens and hundreds</span></h2>
+<div id="tens"></div>
+<p>Join tens and units with <b>e</b>: <span class="pt">quarenta e oito</span> (48) <span id="age48"></span></p>
+
+<h2>3. Gerador de números<span class="tr"> · Number generator</span></h2>
+<p>Type any number from 0 to 999 999 and hear it in Portuguese.</p>
+<div class="tool">
+  <div class="row"><input type="number" id="numIn" value="1977" min="0" max="999999" aria-label="Número"><button type="button" class="btn pri" id="numGo">Ver por extenso<span class="tr"> · Show in words</span></button></div>
+  <div id="numOut" class="big-say"></div>
+</div>
+<div class="grid g3">
+  <div class="card"><h3>Idade<span class="tr"> · Age</span></h3><p class="pt">Eu tenho quarenta e oito anos.</p><p class="tr">I am forty-eight years old.</p><p>“Quantos anos você tem?”<span class="tr"> (How old are you?)</span></p><p style="margin:0"><span id="s1"></span></p></div>
+  <div class="card"><h3>Ano de nascimento<span class="tr"> · Year of birth</span></h3><p class="pt">Nasci em mil novecentos e setenta e sete.</p><p class="tr">I was born in 1977.</p><p style="margin:0"><span id="s2"></span></p></div>
+  <div class="card"><h3>Este ano<span class="tr"> · This year</span></h3><p class="pt">Estamos em dois mil e vinte e seis.</p><p class="tr">It is 2026.</p><p style="margin:0"><span id="s3"></span></p></div>
+</div>
+<div class="callout de">
+  <b class="t">🇩🇪 Anos: kein “neunzehnhundert”</b>
+  <p>Portuguese says <span class="pt">mil novecentos e setenta e sete</span> (1000 + 900 + 77), not “nineteen seventy-seven”. After <i>mil</i> the <b>e</b> appears only before a number below 100 or a round hundred: <span class="pt">dois mil e vinte e seis</span> but <span class="pt">mil novecentos e setenta e sete</span>.</p>
+</div>
+
+<h3>Praticar números<span class="tr"> · Practice numbers</span></h3>
+<div id="qNumListen"></div>
+<div id="qNumWrite"></div>
+<div id="qYears"></div>
+
+<h2>4. Dias, meses e datas<span class="tr"> · Days, months and dates</span></h2>
+<div class="card" style="margin-bottom:12px"><b>Hoje:</b><span class="tr"> (Today)</span> <span class="pt" id="todayTxt"></span> <span id="todaySay"></span><br><span class="tr" id="todayEn"></span></div>
+<div class="grid g2">
+  <div id="days"></div>
+  <div id="months"></div>
+</div>
+<div class="callout tip">
+  <b class="t">Brasil: “segunda”, não “segunda-feira”</b>
+  <p>In daily speech Brazilians shorten the weekdays: <span class="pt">segunda, terça, quarta, quinta, sexta</span>. The first day of the month is <span class="pt">primeiro</span> (1º de maio); the others use normal numbers: <span class="pt">dois de maio</span>.</p>
+</div>
+<div id="qDates"></div>
+
+<h2>5. Que horas são?<span class="tr"> · What time is it?</span></h2>
+<div id="timeTbl"></div>
+<div id="qTime"></div>
+
+<h2>6. Dinheiro e preços<span class="tr"> · Money and prices</span></h2>
+<div id="money"></div>
+<div class="tool">
+  <div class="row"><label for="moneyIn">Valor em R$<span class="tr"> · Amount in R$</span></label><input type="number" id="moneyIn" value="12.50" step="0.01" min="0" max="9999.99"><button type="button" class="btn pri" id="moneyGo">Dizer o preço<span class="tr"> · Say the price</span></button></div>
+  <div id="moneyOut" class="big-say"></div>
+</div>
+<div class="callout tip">
+  <b class="t">Pix</b>
+  <p>In Brazil almost everything can be paid with <b>Pix</b>, an instant bank transfer made with a QR code or a “chave” (key). You will hear: <span class="pt">“Aceita Pix?”</span> <span id="pixSay"></span> It is one of the first things to set up when you live there.</p>
+</div>
+<div id="qMoney"></div>
+
+<div class="callout prof">
+  <b class="t">Para a professora<span class="tr"> · For the teacher</span></b>
+  <p>Treine primeiro números de 0 a 20, depois dezenas, depois combinações (idade, anos, preços). Peça ao Marc para ditar o número de telefone e o ano de nascimento. Mostre que no Brasil se diz “zero” e que números de telefone costumam ser ditos dígito por dígito.</p>
+  <p class="tr">First practice numbers 0 to 20, then tens, then combinations (age, years, prices). Ask Marc to dictate his phone number and birth year. Point out that in Brazil people say “zero” and that phone numbers are usually said digit by digit.</p>
+</div>
+
+<button type="button" class="btn complete" data-complete>Marcar módulo como concluído</button>
+
+<script>
+(function(){
+var G = window.G, U = G.UI, PT = G.PT;
+var rows = []; for(var i=0;i<=20;i++){ rows.push(['<b>'+i+'</b>','<span class="pt">'+PT.num(i)+'</span>',U.both(PT.num(i))]); }
+var half = Math.ceil(rows.length/2);
+G.$('#n20').innerHTML = '<div class="grid g2"><div id="n20a"></div><div id="n20b"></div></div>';
+U.table(G.$('#n20a'), ['#','Português','Ouvir'], rows.slice(0,half));
+U.table(G.$('#n20b'), ['#','Português','Ouvir'], rows.slice(half));
+
+var tens = [];
+[20,30,40,50,60,70,80,90,100].forEach(function(n){ tens.push(['<b>'+n+'</b>','<span class="pt">'+PT.num(n)+'</span>',U.both(PT.num(n))]); });
+[200,300,400,500,600,700,800,900,1000].forEach(function(n){ tens.push(['<b>'+n+'</b>','<span class="pt">'+PT.num(n)+'</span>',U.both(PT.num(n))]); });
+G.$('#tens').innerHTML = '<div class="grid g2"><div id="t1"></div><div id="t2"></div></div>';
+U.table(G.$('#t1'), ['#','Português','Ouvir'], tens.slice(0,9));
+U.table(G.$('#t2'), ['#','Português','Ouvir'], tens.slice(9));
+G.$('#age48').innerHTML = U.both('quarenta e oito');
+
+function showNum(){
+  var n = parseInt(G.$('#numIn').value,10); if(isNaN(n)||n<0||n>999999){ G.$('#numOut').textContent = 'Use um número de 0 a 999 999.'; return; }
+  var w = PT.num(n); G.$('#numOut').innerHTML = '<span class="pt">'+w+'</span> '+U.both(w);
+}
+G.$('#numGo').addEventListener('click', showNum); G.$('#numIn').addEventListener('keydown', function(e){ if(e.key==='Enter') showNum(); });
+showNum();
+G.$('#s1').innerHTML = U.both('Eu tenho quarenta e oito anos.');
+G.$('#s2').innerHTML = U.both('Nasci em mil novecentos e setenta e sete.');
+G.$('#s3').innerHTML = U.both('Estamos em dois mil e vinte e seis.');
+
+/* generated quizzes */
+function rnd(a,b){ return a + Math.floor(Math.random()*(b-a+1)); }
+function distract(n, lo, hi){ var s = {}; s[n]=1; var out=[]; while(out.length<3){ var d = Math.max(lo, Math.min(hi, n + rnd(-12,12))); if(d!==n && !s[d]){ s[d]=1; out.push(String(d)); } } return out; }
+var q1 = []; for(var k=0;k<10;k++){ var n = rnd(0,100); q1.push({q:'Listen: which number is it?', say:PT.num(n), options:[String(n)].concat(distract(n,0,100)), answer:0, why:'<span class="pt">'+PT.num(n)+'</span> = '+n}); }
+G.Quiz.mount(G.$('#qNumListen'), { id:'numeros-ouvir', questions:q1 });
+var q2 = []; for(var k2=0;k2<8;k2++){ var m = rnd(0,99); q2.push({type:'type', q:'Write <b>'+m+'</b> in words.', answer:PT.num(m)}); }
+G.Quiz.mount(G.$('#qNumWrite'), { id:'numeros-escrever', questions:q2, shuffle:false });
+var q3 = []; [1977,1985,1999,2000,2010,2024,2026,1990].forEach(function(y){ q3.push({q:'Listen: which year?', say:PT.num(y), options:[String(y),String(y+1),String(y-10),String(y+10)], answer:0, why:'<span class="pt">'+PT.num(y)+'</span>'}); });
+G.Quiz.mount(G.$('#qYears'), { id:'anos', questions:q3, limit:6 });
+
+/* dates */
+var t = PT.today(); G.$('#todayTxt').textContent = t; G.$('#todaySay').innerHTML = U.both(t); G.$('#todayEn').textContent = PT.todayEn();
+var dayAbbr = ['domingo','segunda','terça','quarta','quinta','sexta','sábado'];
+U.table(G.$('#days'), ['Dia','English','Ouvir'], [1,2,3,4,5,6,0].map(function(i){ return ['<span class="pt">'+PT.DAYS[i]+'</span>',PT.DAYS_EN[i],U.say(PT.DAYS[i])]; }));
+U.table(G.$('#months'), ['Mês','English','Ouvir'], PT.MONTHS.map(function(m,i){ return ['<span class="pt">'+m+'</span>',PT.MONTHS_EN[i],U.say(m)]; }));
+var q4 = [
+ {q:'The day after <b>sexta-feira</b> is…', options:['sábado','domingo','quinta-feira'], answer:0, keepOrder:true},
+ {q:'<b>Março</b> is month number…', options:['2','3','4'], answer:1, keepOrder:true},
+ {q:'Listen: which day is it?', say:'quarta-feira', options:['terça-feira','quarta-feira','quinta-feira'], answer:1, keepOrder:true},
+ {q:'Listen: which month is it?', say:'outubro', options:['agosto','outubro','novembro'], answer:1, keepOrder:true},
+ {q:'How do you say “1 May”?', options:['um de maio','primeiro de maio','uma de maio'], answer:1, keepOrder:true},
+ {q:'Brazilians often shorten <b>segunda-feira</b> to…', options:['segunda','segundo','seg-feira'], answer:0, keepOrder:true}
+];
+G.Quiz.mount(G.$('#qDates'), { id:'datas', questions:q4 });
+
+/* time */
+function hw(h){ return h===1?'uma':h===2?'duas':PT.num(h); }
+function timePhrase(h,m){
+  if(h===12&&m===0) return 'É meio-dia.'; if(h===0&&m===0) return 'É meia-noite.';
+  var hh = h%12===0?12:h%12; var base = hh===1 ? 'É uma' : 'São '+hw(hh);
+  if(m===0) return base+(hh===1?' hora.':' horas.');
+  if(m===30) return base+' e meia.';
+  return base+' e '+PT.num(m)+'.';
+}
+var tt = [[8,0],[1,0],[2,15],[3,30],[6,45],[12,0],[9,10],[11,30]];
+function timeEn(h,m){ if(h===12&&m===0) return 'It is noon.'; if(h===0&&m===0) return 'It is midnight.'; var hh=h%12===0?12:h%12; if(m===0) return 'It is '+hh+" o'clock."; if(m===15) return 'It is a quarter past '+hh+'.'; if(m===30) return 'It is half past '+hh+'.'; if(m===45) return 'It is a quarter to '+((hh%12)+1)+'.'; return 'It is '+hh+':'+(m<10?'0':'')+m+'.'; }
+U.table(G.$('#timeTbl'), ['Hora','Português','English','Ouvir'], [[8,0],[1,0],[2,15],[3,30],[6,45],[12,0]].map(function(x){ var s = timePhrase(x[0],x[1]); return ['<b>'+x[0]+':'+(x[1]<10?'0':'')+x[1]+'</b>','<span class="pt">'+s+'</span>',timeEn(x[0],x[1]),U.both(s)]; }));
+G.$('#timeTbl').insertAdjacentHTML('beforeend','<p class="en">Perguntar: <span class="pt">Que horas são?</span> (What time is it?) '+U.both('Que horas são?')+' · <span class="pt">Que horas é a aula?</span> (What time is the class?)<br>Brazilians also say: <span class="pt">quinze para as três</span> (2:45) '+U.say('quinze para as três')+'</p>');
+var q5 = []; tt.forEach(function(x){ var tm = function(a){ return a[0]+':'+(a[1]<10?'0':'')+a[1]; };
+  var cand = [tm(x), tm([x[0], (x[1]+30)%60]), tm([(x[0]%12)+1, x[1]]), tm([x[0],15]), tm([x[0],45]), tm([x[0],0]), tm([x[0],30])];
+  var opts = cand.filter(function(c,i){ return cand.indexOf(c)===i; }).slice(0,4);
+  q5.push({q:'Listen: what time is it?', say:timePhrase(x[0],x[1]), options:opts, answer:0}); });
+G.Quiz.mount(G.$('#qTime'), { id:'horas', questions:q5, limit:6 });
+
+/* money */
+function moneyPhrase(v){
+  var r = Math.floor(v), c = Math.round((v - r)*100); if(c>=100){ r++; c=0; }
+  var rs = r===0 ? '' : PT.num(r)+(r===1?' real':' reais'), cs = c===0 ? '' : PT.num(c)+(c===1?' centavo':' centavos');
+  if(!rs && !cs) return 'zero reais'; return rs && cs ? rs+' e '+cs : rs||cs;
+}
+U.table(G.$('#money'), ['Português','English','Ouvir'], [
+ ['<span class="pt">Quanto custa?</span> / <span class="pt">Quanto é?</span>','How much is it?',U.both('Quanto custa?')],
+ ['<span class="pt">É caro. / É barato.</span>','It is expensive. / It is cheap.',U.both('É caro. É barato.')],
+ ['<span class="pt">Aceita cartão?</span>','Do you accept cards?',U.both('Aceita cartão?')],
+ ['<span class="pt">Aceita Pix?</span>','Do you accept Pix?',U.both('Aceita Pix?')],
+ ['<span class="pt">Tem troco?</span>','Do you have change?',U.both('Tem troco?')],
+ ['<span class="pt">Posso pagar em dinheiro?</span>','Can I pay in cash?',U.both('Posso pagar em dinheiro?')],
+ ['<span class="pt">A conta, por favor.</span>','The bill, please.',U.both('A conta, por favor.')]
+]);
+function showMoney(){ var v = parseFloat(G.$('#moneyIn').value); if(isNaN(v)||v<0){ G.$('#moneyOut').textContent=''; return; } var p = moneyPhrase(v); G.$('#moneyOut').innerHTML = '<span class="pt">'+p+'</span> '+U.both(p); }
+G.$('#moneyGo').addEventListener('click', showMoney); showMoney();
+G.$('#pixSay').innerHTML = U.both('Aceita Pix?');
+var q6 = []; [[5,0],[12,50],[30,0],[7,90],[100,0],[2,5]].forEach(function(x){ var v = x[0]+x[1]/100; var f = 'R$ '+x[0]+','+(x[1]<10?'0':'')+x[1];
+  q6.push({q:'Listen: how much is it?', say:moneyPhrase(v), options:[f,'R$ '+(x[0]+10)+','+(x[1]<10?'0':'')+x[1],'R$ '+Math.max(1,x[0]-1)+','+(x[1]<10?'0':'')+x[1],'R$ '+x[0]+','+(x[1]===0?'50':'00')], answer:0}); });
+G.Quiz.mount(G.$('#qMoney'), { id:'dinheiro', questions:q6, limit:5 });
+})();
+</script>

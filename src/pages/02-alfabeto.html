@@ -1,0 +1,181 @@
+<h1>O alfabeto<span class="tr">The alphabet</span></h1>
+<p class="sec-intro">Módulo 2 · The alphabet. 26 letras, o nome de cada uma, um exemplo e como soletrar.<span class="tr">26 letters, the name of each one, an example, and how to spell.</span></p>
+
+<div class="callout">
+  <b class="t">26 letters, same as English</b>
+  <p>Since the 2009 spelling reform, <b>k, w and y</b> officially belong to the Portuguese alphabet, so you have the same 26 letters as in English. <b>ç</b> and the accents are not extra letters: they change how a letter sounds.</p>
+</div>
+
+<h2>1. As letras<span class="tr"> · The letters</span></h2>
+<p>Click a letter to hear its name and an example word. Use 🐢 for slow.</p>
+<div class="letters" id="letters"></div>
+<div class="detail" id="detail" aria-live="polite"></div>
+
+<div class="callout de">
+  <b class="t">🇩🇪 Letter names are different from German</b>
+  <p><b>E</b> is <span class="pt">é</span> (not “eh”), <b>G</b> is <span class="pt">gê</span> (like German “je”), <b>H</b> is <span class="pt">agá</span>, <b>J</b> is <span class="pt">jota</span>, <b>W</b> is <span class="pt">dáblio</span>, <b>V</b> is <span class="pt">vê</span> and <b>X</b> is <span class="pt">xis</span>. Letters ending in -e, like <span class="pt">éfe, éle, ême</span>, end with a soft “i” sound in Brazil.</p>
+</div>
+
+<h2>2. Ouça e escolha a letra<span class="tr"> · Listen and choose the letter</span></h2>
+<div id="qLetters"></div>
+
+<h2>3. Soletre seu nome<span class="tr"> · Spell your name</span></h2>
+<p>Type any word or name. You will see how to spell it aloud in Portuguese and the “A de avião” way.</p>
+<div class="tool">
+  <div class="row"><input type="text" id="spellIn" value="Marc" aria-label="Palavra para soletrar" autocomplete="off" spellcheck="false"><button type="button" class="btn pri" id="spellGo">Soletrar<span class="tr"> · Spell</span></button><button type="button" class="btn" id="spellPlay">🔊 Ouvir as letras<span class="tr"> · Listen to the letters</span></button></div>
+  <div class="spell" id="spellOut"></div>
+  <div id="spellNote" class="muted" style="margin-top:10px"></div>
+</div>
+<div class="callout tip">
+  <b class="t">Marc → “Márki”</b>
+  <p>Portuguese words rarely end in a consonant sound, so Brazilians add a little “i”: <span class="pt" data-say="Márki">Marc</span> becomes “Márki”. The same happens with <i>Facebook → “Feicibúqui”</i> and <i>hip-hop → “ripóqui”</i>. Do not be surprised when you hear it!</p>
+</div>
+
+<h2>4. O alfabeto de soletração<span class="tr"> · The spelling alphabet</span></h2>
+<p>On the phone Brazilians spell with words: <span class="pt">“M de mala, A de avião, R de rato, C de casa.”</span> There is no single official list, but these words are common and clear.</p>
+<div id="spellAlpha"></div>
+
+<h2>5. Letras com mais de um som<span class="tr"> · Letters with more than one sound</span></h2>
+<div id="multi"></div>
+<p>Spelling and sounds in detail come next, in <a href="03-sons-e-fonetica.html">Sons e IPA</a>.</p>
+
+<h2>6. Acentos e sinais<span class="tr"> · Accents and marks</span></h2>
+<div id="accents"></div>
+<div id="qAccents"></div>
+
+<h2>7. Soletre o que você ouviu<span class="tr"> · Spell what you heard</span></h2>
+<p>Listen to each word and type it.</p>
+<div id="dict"></div>
+
+<div class="callout prof">
+  <b class="t">Para a professora<span class="tr"> · For the teacher</span></b>
+  <p>Faça o Marc soletrar em voz alta: nome, sobrenome, e-mail (“arroba”, “ponto”, “ponto com”), endereço. Em formulários no Brasil pedem “Como se escreve?” o tempo todo. Observe: <b>R</b> (érre) e <b>H</b> (agá) são as mais difíceis para alemães.</p>
+  <p class="tr">Have Marc spell out loud: first name, surname, e-mail (“arroba” = @, “ponto” = dot, “ponto com” = .com), address. In Brazil people constantly ask “Como se escreve?”. Note: R (érre) and H (agá) are the hardest for Germans.</p>
+</div>
+
+<button type="button" class="btn complete" data-complete>Marcar módulo como concluído</button>
+
+<script>
+(function(){
+var G = window.G, U = G.UI;
+/* letter, spoken name, written name, IPA, example word, ipa of word hint, tip */
+var L = [
+ ['A','á','a','a','avião','Like German “Tag”.'],
+ ['B','bê','bê','be','bola','Like German “B”, with no puff of air.'],
+ ['C','cê','cê','se','casa','“k” before a, o, u (casa) · “s” before e, i (cedo).'],
+ ['D','dê','dê','de','dado','Before “i” it becomes “dj”: dia → “djia”.'],
+ ['E','é','é','ɛ','escola','Name is “é” (open sound). Final e sounds like “i”.'],
+ ['F','éfe','éfe','ˈɛfi','faca','Like German “F”.'],
+ ['G','gê','gê','ʒe','gato','“g” as in “gut” before a, o, u · “zh” before e, i (gelo).'],
+ ['H','agá','agá','aˈga','hotel','The letter H is always silent: hotel → “otéu”.'],
+ ['I','i','i','i','igreja','Like German “i” in “Biene”.'],
+ ['J','jota','jota','ˈʒɔtɐ','janela','Always “zh”, like “Garage” or “Journal”.'],
+ ['K','cá','cá','ka','kiwi','Only in foreign words and names (kiwi, quilo is spelled with qu).'],
+ ['L','éle','éle','ˈɛli','lua','At the end of a syllable it sounds like “u”: Brasil → “Brasiu”.'],
+ ['M','ême','ême','ˈẽmi','mala','Nasalizes the vowel before it: sim, bom.'],
+ ['N','êne','êne','ˈẽni','navio','Nasalizes the vowel before it: onde, tanto.'],
+ ['O','ó','ó','ɔ','ovo','Name is “ó” (open). Final o sounds like “u”.'],
+ ['P','pê','pê','pe','pato','Like German “P”, with less puff of air.'],
+ ['Q','quê','quê','ke','queijo','Always with u: que, qui. The u is usually silent: queijo → “kêijo”.'],
+ ['R','érre','érre','ˈɛʁi','rato','At the start of a word like German “ch” in “Bach” or your German “r”.'],
+ ['S','ésse','ésse','ˈɛsi','sapo','At the start “s” (not “z” as in German!). Between vowels: “z”.'],
+ ['T','tê','tê','te','tatu','Before “i” it becomes “tch”: tia → “tchia”.'],
+ ['U','u','u','u','uva','Like German “u” in “gut”.'],
+ ['V','vê','vê','ve','vaca','Like German “W” in “Wasser”, not like German “V”!'],
+ ['W','dáblio','dáblio','ˈdabliw','Wi-Fi','Only in foreign words: Wi-Fi → “uai-fai”.'],
+ ['X','xis','xis','ʃis','xícara','Often “sh” (xícara), but also “ks” (táxi) or “z” (exemplo).'],
+ ['Y','ípsilon','ípsilon','ˈipsilõ','yoga','Only in foreign words and names: yoga → “iôga”.'],
+ ['Z','zê','zê','ze','zebra','Always voiced “z” like German “S” in “Sonne”, never “ts”.']
+];
+var box = G.$('#letters'), det = G.$('#detail');
+box.innerHTML = L.map(function(l,n){ return '<button type="button" class="letter" data-n="'+n+'"><span class="big">'+l[0]+l[0].toLowerCase()+'</span><span class="nm">'+l[2]+'</span><span class="ip">['+l[3]+']</span><span class="ex">'+l[4]+(G.gloss(l[4])?G.trB(G.gloss(l[4])):'')+'</span></button>'; }).join('');
+box.addEventListener('click', function(e){
+  var b = e.target.closest('.letter'); if(!b) return; var l = L[+b.getAttribute('data-n')];
+  G.$$('.letter', box).forEach(function(x){ x.classList.toggle('on', x===b); });
+  det.classList.add('show');
+  det.innerHTML = '<h3 style="margin-top:0"><span style="font-size:2rem;color:var(--blue)">'+l[0]+l[0].toLowerCase()+'</span> &nbsp; <span class="pt">'+l[2]+'</span> <span class="ipa muted">['+l[3]+']</span></h3>'
+    +'<p>Name: '+U.both(l[1])+' &nbsp; Example: <b class="pt">'+l[4]+'</b> '+U.both(l[4])+'</p><p class="en" style="margin:0">'+l[5]+'</p>';
+  G.TTS.speak(l[1]);
+});
+
+/* quiz: hear letter name -> choose letter */
+var pool = ['B','C','D','E','G','H','J','K','Q','R','V','X','Z','F','L','M','N','P','S','T'];
+var qs = pool.map(function(c){ var l = L.filter(function(x){ return x[0]===c; })[0];
+  var distract = G.shuffle(pool.filter(function(x){ return x!==c; })).slice(0,3);
+  return {q:'Which letter do you hear?', say:l[1], options:[c].concat(distract), answer:0, why:'<span class="pt">'+l[2]+'</span> = '+c+'.'};
+});
+G.Quiz.mount(G.$('#qLetters'), { id:'letras', questions:qs, limit:8, shuffle:true });
+
+/* spell tool */
+var spellEx = {}; L.forEach(function(l){ spellEx[l[0]] = [l[1], l[4]]; });
+spellEx['W'] = ['dáblio','Wi-Fi']; spellEx['K'] = ['cá','kiwi']; spellEx['Y'] = ['ípsilon','yoga'];
+function spellOut(){
+  var w = G.$('#spellIn').value.trim(); var out = G.$('#spellOut'), note = G.$('#spellNote');
+  var letters = w.toUpperCase().split('').filter(function(c){ return /[A-ZÇ]/.test(strip(c)) || c==='Ç'; });
+  function strip(c){ return c.normalize('NFD').replace(/[̀-ͯ]/g,''); }
+  var html = '', names = [];
+  w.split('').forEach(function(ch){
+    var base = strip(ch).toUpperCase();
+    if(ch==='ç'||ch==='Ç'){ html += '<div class="sp" data-say="cê cedilha"><b>Ç</b><span>cê cedilha</span></div>'; names.push('cê cedilha'); return; }
+    if(ch==='-'){ html += '<div class="sp" data-say="hífen"><b>-</b><span>hífen</span></div>'; names.push('hífen'); return; }
+    if(ch===' '){ return; }
+    if(!/[A-Z]/.test(base)) return;
+    var e = spellEx[base]; var acc = (ch!==base && ch.toLowerCase()!==base.toLowerCase()) ? ' '+({'á':'acento agudo','é':'acento agudo','í':'acento agudo','ó':'acento agudo','ú':'acento agudo','â':'acento circunflexo','ê':'acento circunflexo','ô':'acento circunflexo','ã':'til','õ':'til','à':'acento grave'}[ch.toLowerCase()]||'') : '';
+    var say = e[0] + acc;
+    html += '<div class="sp" data-say="'+say.replace(/"/g,'')+'"><b>'+ch.toUpperCase()+'</b><span>'+e[0]+(acc?'<br>'+acc.trim():'')+'</span></div>'; names.push(say);
+  });
+  out.innerHTML = html; G.UI.enhance(out); out._names = names;
+  var phrase = w.toUpperCase().split('').filter(function(c){ return /[A-Z]/.test(strip(c)); }).map(function(c){ var b = strip(c); return b+' de '+spellEx[b][1]; }).join(', ');
+  note.innerHTML = phrase ? '<p style="margin:0"><b>Ao telefone:</b>'+G.tr('On the phone')+' <span class="pt">'+phrase+'.</span> '+U.say(phrase)+'</p>' : '';
+}
+G.$('#spellGo').addEventListener('click', spellOut);
+G.$('#spellIn').addEventListener('keydown', function(e){ if(e.key==='Enter') spellOut(); });
+G.$('#spellPlay').addEventListener('click', function(){ var n = G.$('#spellOut')._names || []; if(n.length) G.TTS.seq(n.map(function(x){ return {text:x}; })); });
+spellOut();
+
+/* spelling alphabet */
+var sa = L.map(function(l){ var w = l[0]==='W'?'Wi-Fi':l[4]; return '<button type="button" class="chip" data-say="'+l[0]+' de '+w.replace('Wi-Fi','uai-fai')+'"><span class="s">'+l[0]+'</span><span class="w"><b>de '+w+'</b><small>'+l[2]+'</small></span></button>'; }).join('');
+G.$('#spellAlpha').innerHTML = '<div class="chips">'+sa+'</div>';
+
+/* multiple sounds */
+U.table(G.$('#multi'), ['Letra','Sons','Exemplos','Ouvir'], [
+ ['<b>C</b>','“k” before a, o, u · “s” before e, i','casa, copo · cedo, cinema',U.say('casa, cedo, cinema')],
+ ['<b>G</b>','“g” before a, o, u · “zh” before e, i','gato, gostar · gelo, gente',U.say('gato, gelo, gente')],
+ ['<b>S</b>','“s” at the start · “z” between vowels','sapo, sol · casa, mesa',U.say('sapo, casa, mesa')],
+ ['<b>X</b>','“sh” · “ks” · “z” · “s”','xícara · táxi · exemplo · próximo',U.say('xícara, táxi, exemplo, próximo')],
+ ['<b>R</b>','strong (start of word, rr) · soft tap between vowels','rato, carro · caro, hora',U.say('rato, carro, caro, hora')],
+ ['<b>E</b>','“é”, “ê” or “i” at the end of a word','café, você · leite',U.say('café, você, leite')],
+ ['<b>O</b>','“ó”, “ô” or “u” at the end of a word','avó, avô · livro',U.say('avó, avô, livro')],
+ ['<b>H</b>','silent · in “ch, lh, nh” with other sounds','hotel, hoje · chuva, filho, banho',U.say('hotel, hoje, chuva, filho, banho')]
+]);
+
+/* accents */
+U.table(G.$('#accents'), ['Sinal','Nome','Efeito','Exemplo'], [
+ ['<span class="ipa" style="font-size:1.4rem">´</span>','acento agudo<span class="tr"> · acute</span>','stressed, open vowel: á é í ó ú','<span class="pt">café, avó, música</span> '+U.say('café, avó, música')],
+ ['<span class="ipa" style="font-size:1.4rem">^</span>','acento circunflexo<span class="tr"> · circumflex</span>','stressed, closed vowel: â ê ô','<span class="pt">você, avô, português</span> '+U.say('você, avô, português')],
+ ['<span class="ipa" style="font-size:1.4rem">~</span>','til<span class="tr"> · tilde</span>','nasal vowel: ã õ','<span class="pt">irmã, pão, limões</span> '+U.say('irmã, pão, limões')],
+ ['<span class="ipa" style="font-size:1.4rem">`</span>','acento grave<span class="tr"> · grave</span>','only on “à” (a + a)','<span class="pt">Vou à praia.</span> '+U.say('Vou à praia.')],
+ ['<span class="ipa" style="font-size:1.4rem">ç</span>','cê cedilha<span class="tr"> · c-cedilla</span>','“s” sound before a, o, u','<span class="pt">praça, coração</span> '+U.say('praça, coração')]
+]);
+G.Quiz.mount(G.$('#qAccents'), { id:'acentos', questions:[
+  {q:'<b>pão</b>: the til (~) tells you the vowel is…', options:['nasal','longer','silent'], answer:0, keepOrder:true},
+  {q:'<b>ç</b> in <b>praça</b> sounds like…', options:['k','s','sh'], answer:1, keepOrder:true},
+  {q:'<b>avô</b> (grandfather) has a circunflexo, so “ô” is…', options:['open','closed','nasal'], answer:1, keepOrder:true, why:'avô /aˈvo/ (closed) · avó /aˈvɔ/ (open, grandmother).'},
+  {q:'The German umlaut <b>ü</b> in Portuguese…', options:['exists','does not exist (only in some foreign names)','is the same as ú'], answer:1, keepOrder:true, why:'The trema was removed in 2009 (e.g. “linguiça”, no ü).'}
+]});
+
+/* dictation */
+G.Quiz.mount(G.$('#dict'), { id:'ditado', shuffle:true, limit:8, questions:[
+  {type:'type', q:'Type the word you hear.', say:'casa', answer:'casa'},
+  {type:'type', q:'Type the word you hear.', say:'gato', answer:'gato'},
+  {type:'type', q:'Type the word you hear.', say:'janela', answer:'janela'},
+  {type:'type', q:'Type the word you hear.', say:'queijo', answer:'queijo'},
+  {type:'type', q:'Type the word you hear.', say:'xícara', answer:'xícara'},
+  {type:'type', q:'Type the word you hear.', say:'zebra', answer:'zebra'},
+  {type:'type', q:'Type the word you hear.', say:'chuva', answer:'chuva'},
+  {type:'type', q:'Type the word you hear.', say:'filho', answer:'filho'},
+  {type:'type', q:'Type the word you hear.', say:'hotel', answer:'hotel'},
+  {type:'type', q:'Type the word you hear.', say:'coração', answer:'coração'}
+]});
+})();
+</script>

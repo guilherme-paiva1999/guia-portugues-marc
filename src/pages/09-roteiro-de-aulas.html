@@ -1,0 +1,107 @@
+<h1>Roteiro de aulas<span class="tr">Lesson plan</span></h1>
+<p class="sec-intro">Módulo 9 · Para a professora. Plano de 10 aulas de 60 minutos, erros previsíveis de falantes de alemão e inglês, cenas de role-play e uma lista A1 para acompanhar o progresso. As caixinhas ficam salvas neste navegador.<span class="tr">Module 9 · For the teacher. A plan of 10 lessons of 60 minutes, predictable mistakes of German and English speakers, role-play scenes and an A1 checklist to track progress. The checkboxes are saved in this browser.</span></p>
+
+<div class="callout prof" style="display:block!important">
+  <b class="t">Como usar<span class="tr"> · How to use</span></b>
+  <p>Cada aula segue o mesmo ritmo: <b>aquecimento (5′) → apresentação (15′) → prática (20′) → fala (15′) → fecho (5′)</b>. O ritmo é flexível: se o Marc precisar de mais tempo nos sons, estique a aula 3 ou 4 e continue. Marque os itens concluídos.</p>
+  <p class="tr">Each lesson follows the same rhythm: <b>warm-up (5′) → presentation (15′) → practice (20′) → speaking (15′) → wrap-up (5′)</b>. The pace is flexible: if Marc needs more time on sounds, stretch lesson 3 or 4 and carry on. Tick the completed items.</p>
+  <p style="margin:0"><button type="button" class="btn sm" onclick="window.print()">Imprimir este roteiro<span class="tr"> · Print this plan</span></button></p>
+</div>
+
+<h2>1. Plano de 10 aulas<span class="tr"> · 10-lesson plan</span></h2>
+<div id="lessons"></div>
+
+<h2>2. Erros previsíveis (alemão e inglês → português do Brasil)<span class="tr"> · Predictable mistakes (German and English → Brazilian Portuguese)</span></h2>
+<div id="errors"></div>
+
+<h2>3. Rotina de estudo do Marc<span class="tr"> · Marc's study routine</span></h2>
+<div class="grid g3">
+  <div class="card"><h3>Todo dia · 10 min<span class="tr"> · Every day</span></h3><p style="margin:0">Flashcards de <a href="08-praticar.html">Praticar</a>, 5 palavras novas, e ouvir os áudios da aula.<span class="tr" style="display:block">Flashcards from Practice, 5 new words, and listening to the lesson audio.</span></p></div>
+  <div class="card"><h3>3× por semana · 15 min<span class="tr"> · 3× a week</span></h3><p style="margin:0">Ouvir algo em português brasileiro (podcast, série, música) e repetir 3 frases.<span class="tr" style="display:block">Listen to something in Brazilian Portuguese (podcast, series, music) and repeat 3 sentences.</span></p></div>
+  <div class="card"><h3>1× por semana · 5 min<span class="tr"> · 1× a week</span></h3><p style="margin:0">Gravar um áudio contando a semana e enviar para a professora corrigir.<span class="tr" style="display:block">Record an audio telling about the week and send it to the teacher for correction.</span></p></div>
+</div>
+
+<h2>4. Cenas de role-play: “Chegando ao Brasil”<span class="tr"> · Role-play scenes: “Arriving in Brazil”</span></h2>
+<div id="roles"></div>
+
+<h2>5. Lista A1: eu consigo…<span class="tr"> · A1 checklist: I can…</span></h2>
+<div class="card" id="a1"></div>
+
+<script>
+(function(){
+var G = window.G, U = G.UI, tr = G.tr;
+/* t/te = title, obj/objE = objective, steps [pt, en], hw/hwE = homework */
+var LS = [
+ {t:'Boas-vindas e primeiros sons',te:'Welcome and first sounds',m:'01-comecando.html',obj:'Cumprimentar, dizer o nome, usar frases de sala de aula, fazer a autoavaliação.',objE:'Greet, say your name, use classroom phrases, do the self-assessment.',
+  steps:[['Aquecimento: “Oi! Tudo bem?” em duplas (você e o Marc).','Warm-up: “Oi! Tudo bem?” in pairs (you and Marc).'],['Apresentação: Brasil × Portugal em 3 min; cognatos e falsos amigos.','Presentation: Brazil vs Portugal in 3 min; cognates and false friends.'],['Prática: flashcards das primeiras palavras, mini-diálogo, frases de sala de aula.','Practice: first-words flashcards, mini dialogue, classroom phrases.'],['Fala: “Meu nome é Marc. Eu sou da Alemanha.”','Speaking: “My name is Marc. I am from Germany.”'],['Fecho: autoavaliação “Onde você está hoje?”','Wrap-up: self-assessment “Where are you today?”']],
+  hw:'10 min de flashcards por dia; gravar “Oi, meu nome é Marc”.',hwE:'10 min of flashcards a day; record “Oi, meu nome é Marc”.'},
+ {t:'Alfabeto e soletrar',te:'Alphabet and spelling',m:'02-alfabeto.html',obj:'Nomear as 26 letras, soletrar nome, e-mail e palavras em voz alta.',objE:'Name the 26 letters, spell your name, e-mail and words out loud.',
+  steps:[['Aquecimento: revisar cumprimentos.','Warm-up: review greetings.'],['Apresentação: letras com áudio; R, H, X, G, J; nome “Márki”.','Presentation: letters with audio; R, H, X, G, J; the name “Márki”.'],['Prática: “Ouça e escolha a letra”; soletrar o nome; “A de avião”.','Practice: “Listen and choose the letter”; spell the name; “A de avião”.'],['Fala: soletrar o nome, o e-mail e o endereço.','Speaking: spell the name, the e-mail and the address.'],['Fecho: mini-ditado de 5 palavras.','Wrap-up: mini dictation of 5 words.']],
+  hw:'Soletrar 10 palavras do dia a dia em voz alta.',hwE:'Spell 10 everyday words out loud.'},
+ {t:'Sons do Brasil I',te:'Sounds of Brazil I',m:'03-sons-e-fonetica.html',obj:'Vogais orais, nasais, “e” e “o” finais, t/d + i.',objE:'Oral vowels, nasals, final “e” and “o”, t/d + i.',
+  steps:[['Aquecimento: pares avô/avó, ovo/ovos.','Warm-up: pairs avô/avó, ovo/ovos.'],['Apresentação: vogais, nasais, finais -e/-o; “leite”, “grande”, “livro”.','Presentation: vowels, nasals, final -e/-o; “leite”, “grande”, “livro”.'],['Prática: “Teste de ouvido”; repetição em coro.','Practice: “Ear test”; choral repetition.'],['Fala: frases curtas com muitas nasais e t/d (“Bom dia, tudo bem?”).','Speaking: short sentences with many nasals and t/d (“Bom dia, tudo bem?”).'],['Fecho: autoavaliação dos sons.','Wrap-up: self-assessment of the sounds.']],
+  hw:'Gravar 10 palavras com t/d + i e com nasais.',hwE:'Record 10 words with t/d + i and with nasals.'},
+ {t:'Sons do Brasil II e IPA',te:'Sounds of Brazil II and IPA',m:'03-sons-e-fonetica.html',obj:'L final, R, S/Z, ch/j/lh/nh, tabela IPA, sílaba tônica, trava-línguas.',objE:'Final L, R, S/Z, ch/j/lh/nh, IPA chart, stressed syllable, tongue twisters.',
+  steps:[['Aquecimento: revisar o -e final.','Warm-up: review the final -e.'],['Apresentação: consoantes que mudam tudo; tabela IPA como consulta.','Presentation: consonants that change everything; IPA chart as a reference.'],['Prática: sílaba tônica; leitura de palavras do texto do Marc.','Practice: stressed syllable; reading words from Marc’s text.'],['Fala: trava-línguas devagar e depois em velocidade normal.','Speaking: tongue twisters slowly, then at normal speed.'],['Fecho: quiz “Qual é o som?”.','Wrap-up: “Which sound is it?” quiz.']],
+  hw:'Praticar 2 trava-línguas, 5 min por dia.',hwE:'Practice 2 tongue twisters, 5 min a day.'},
+ {t:'Apresentação do Marc',te:"Marc's introduction",m:'04-apresentacao.html',obj:'Ler, entender e dizer o texto pessoal; contar a própria história.',objE:'Read, understand and say the personal text; tell his own story.',
+  steps:[['Aquecimento: perguntas “Como você se chama? De onde você é?”.','Warm-up: questions “What is your name? Where are you from?”.'],['Apresentação: texto do Marc frase por frase; vocabulário e passado.','Presentation: Marc’s text sentence by sentence; vocabulary and past tense.'],['Prática: lacunas, frases em ordem, compreensão.','Practice: gaps, sentences in order, comprehension.'],['Fala: o Marc conta a história sem olhar para o texto.','Speaking: Marc tells the story without looking at the text.'],['Fecho: “Agora é com você” (versão personalizada).','Wrap-up: “Now it’s your turn” (personalized version).']],
+  hw:'Gravar a apresentação em 30 segundos.',hwE:'Record the introduction in 30 seconds.'},
+ {t:'Gramática I: pronomes, ser/estar, verbos',te:'Grammar I: pronouns, ser/estar, verbs',m:'05-gramatica-basica.html',obj:'Usar eu, você, ele/ela, a gente; ser × estar; presente de ter, ir, querer, morar, falar, gostar.',objE:'Use eu, você, ele/ela, a gente; ser vs estar; present tense of ter, ir, querer, morar, falar, gostar.',
+  steps:[['Aquecimento: “Onde você mora? Quantos anos você tem?”.','Warm-up: “Where do you live? How old are you?”.'],['Apresentação: pronomes; ser × estar; verbos irregulares básicos.','Presentation: pronouns; ser vs estar; basic irregular verbs.'],['Prática: lacunas com escolha; conjugador; quiz de verbos.','Practice: multiple-choice gaps; conjugator; verb quiz.'],['Fala: 6 frases com ser, estar, ter.','Speaking: 6 sentences with ser, estar, ter.'],['Fecho: erros do dia.','Wrap-up: mistakes of the day.']],
+  hw:'Escrever 8 frases sobre a rotina usando 4 verbos novos.',hwE:'Write 8 sentences about the routine using 4 new verbs.'},
+ {t:'Gramática II: artigos, contrações, perguntas',te:'Grammar II: articles, contractions, questions',m:'05-gramatica-basica.html',obj:'Artigos, gênero e plural; no/na/do/da; palavras interrogativas; negação.',objE:'Articles, gender and plural; no/na/do/da; question words; negation.',
+  steps:[['Aquecimento: revisar verbos.','Warm-up: review verbs.'],['Apresentação: artigos e gênero; países e contrações.','Presentation: articles and gender; countries and contractions.'],['Prática: quiz de gênero; lacunas de contrações; “Associar pergunta e resposta”.','Practice: gender quiz; contraction gaps; “Match question and answer”.'],['Fala: entrevista com 8 perguntas.','Speaking: interview with 8 questions.'],['Fecho: “por que × porque”.','Wrap-up: “por que vs porque”.']],
+  hw:'Fazer 5 perguntas para um amigo brasileiro.',hwE:'Ask a Brazilian friend 5 questions.'},
+ {t:'Números, datas, horas e dinheiro',te:'Numbers, dates, time and money',m:'06-numeros-e-tempo.html',obj:'Números até 1000 e anos; datas; horas; preços e Pix.',objE:'Numbers up to 1000 and years; dates; time; prices and Pix.',
+  steps:[['Aquecimento: contar de 10 em 10.','Warm-up: count by tens.'],['Apresentação: 0–100, centenas, anos (“mil novecentos e setenta e sete”).','Presentation: 0–100, hundreds, years (“mil novecentos e setenta e sete”).'],['Prática: gerador de números; quiz de números, horas, dinheiro.','Practice: number generator; quizzes on numbers, time, money.'],['Fala: idade, ano de nascimento, data de hoje, “Quanto custa?”.','Speaking: age, birth year, today’s date, “How much is it?”.'],['Fecho: ditado de números.','Wrap-up: number dictation.']],
+  hw:'Ditar o número de telefone e a data de nascimento.',hwE:'Dictate the phone number and the date of birth.'},
+ {t:'Brasil × Portugal',te:'Brazil vs Portugal',m:'07-brasil-x-portugal.html',obj:'Reconhecer e usar as diferenças de pronúncia, gramática e vocabulário.',objE:'Recognize and use the differences in pronunciation, grammar and vocabulary.',
+  steps:[['Aquecimento: “Como se diz autocarro no Brasil?”.','Warm-up: “How do you say autocarro in Brazil?”.'],['Apresentação: pronúncia e gramática; “estou falando” × “estou a falar”.','Presentation: pronunciation and grammar; “estou falando” vs “estou a falar”.'],['Prática: flashcards; “Brasil ou Portugal?”; palavras perigosas.','Practice: flashcards; “Brazil or Portugal?”; dangerous words.'],['Fala: contar a mesma frase em estilo brasileiro.','Speaking: say the same sentence in Brazilian style.'],['Fecho: vocabulário de vida prática (CPF, Pix, aluguel).','Wrap-up: practical-life vocabulary (CPF, Pix, aluguel).']],
+  hw:'Ouvir 15 min de podcast brasileiro e anotar 5 palavras.',hwE:'Listen to 15 min of a Brazilian podcast and note 5 words.'},
+ {t:'Revisão e role-play',te:'Review and role-play',m:'08-praticar.html',obj:'Consolidar o A1, simular situações reais, reavaliar.',objE:'Consolidate A1, simulate real situations, reassess.',
+  steps:[['Aquecimento: “Frase do dia”.','Warm-up: “Sentence of the day”.'],['Apresentação: revisão dos erros mais frequentes.','Presentation: review of the most frequent mistakes.'],['Prática: revisão geral, ditado, associação.','Practice: general review, dictation, matching.'],['Fala: 2 cenas de role-play (abaixo).','Speaking: 2 role-play scenes (below).'],['Fecho: refazer a autoavaliação e definir metas do A2.','Wrap-up: redo the self-assessment and set A2 goals.']],
+  hw:'Plano de estudo para as próximas 4 semanas.',hwE:'Study plan for the next 4 weeks.'}
+];
+G.$('#lessons').innerHTML = LS.map(function(l,n){
+  var key = 'roteiro:'+n;
+  return '<details class="lesson"><summary>Aula '+(n+1)+' · '+l.t+tr('Lesson '+(n+1)+' · '+l.te)+'</summary><div class="in"><p><b>Objetivo:</b> '+l.obj+tr('Goal')+'</p><p class="tr">'+l.objE+'</p><p><a href="'+l.m+'">Abrir o módulo da aula'+tr('Open the lesson module')+'</a></p>'
+   + l.steps.map(function(s,k){ var kk = key+':'+k; return '<label class="chk"><input type="checkbox" data-k="'+kk+'"'+(G.Store.get(kk,false)?' checked':'')+'><span>'+s[0]+'<span class="tr" style="display:block">'+s[1]+'</span></span></label>'; }).join('')
+   + '<p style="margin:10px 0 0"><b>Tarefa:</b> '+l.hw+tr('Homework')+'</p><p class="tr">'+l.hwE+'</p></div></details>';
+}).join('');
+document.addEventListener('change', function(e){ var c = e.target; if(c && c.matches && c.matches('input[type=checkbox][data-k]')) G.Store.set(c.getAttribute('data-k'), c.checked); });
+
+var ER = [
+ ['“s” inicial lido como “z”','Em alemão “Sonne” começa com [z]. Em português “sapo, sol, sim” começam com [s].','sapo, sol, sim, sete','Initial “s” read as “z”','In German “Sonne” starts with [z]. In Portuguese “sapo, sol, sim” start with [s].'],
+ ['“z” lido como “ts”','“Zeit” tem [ts]. Em português “zebra, zero” são só [z].','zebra, zero, azul','“z” read as “ts”','“Zeit” has [ts]. In Portuguese “zebra, zero” are just [z].'],
+ ['“v” lido como “f”','Em alemão “Vater” tem [f]. Em português “v” = [v] (alemão “W”).','vaca, vinho, vida, verde','“v” read as “f”','In German “Vater” has [f]. In Portuguese “v” = [v] (German “W”).'],
+ ['“j” lido como “y”','Em alemão “ja” tem [j]. Em português “j” = [ʒ] (como em “Garage”).','janela, já, jogo, hoje','“j” read as “y”','In German “ja” has [j]. In Portuguese “j” = [ʒ] (as in “Garage”).'],
+ ['“ch” lido como [ç] ou [x]','Em português “ch” = “sh” ([ʃ]).','chuva, chave, chá, mochila','“ch” read as [ç] or [x]','In Portuguese “ch” = “sh” ([ʃ]).'],
+ ['“-e” final como schwa','Em português o -e final soa como “i”.','leite, grande, noite, parte','Final “-e” as a schwa','In Portuguese the final -e sounds like “i”.'],
+ ['“h” pronunciado','O “h” é mudo em português.','hotel, hoje, homem, hora','Pronounced “h”','The “h” is silent in Portuguese.'],
+ ['“qu” lido como [kv]','Em português “qu” é [k] antes de e/i.','queijo, quilo, quente, aqui','“qu” read as [kv]','In Portuguese “qu” is [k] before e/i.'],
+ ['“ei” e “eu” lidos como em alemão','“ei” = [ej] e “eu” = [ew].','meu, leite, feira, seu','“ei” and “eu” read as in German','“ei” = [ej] and “eu” = [ew].'],
+ ['nasais com “m/n” extra','A vogal é nasal; não se diz o “m” ou “n” final.','bom, sim, pão, mãe','Nasals with an extra “m/n”','The vowel is nasal; the final “m” or “n” is not pronounced.'],
+ ['R intervocálico forte','Entre vogais o R é rápido, como em “butter”.','caro, hora, para, parede','Strong R between vowels','Between vowels the R is quick, as in “butter”.'],
+ ['acento da palavra na primeira sílaba','O alemão acentua a primeira sílaba; em português a tônica varia.','Brasil, português, alemão, família','Word stress on the first syllable','German stresses the first syllable; in Portuguese the stress varies.'],
+ ['“aspiração” excessiva de p/t/k','Em português p, t, k têm menos sopro.','pato, tatu, casa, quanto','Too much aspiration of p/t/k','In Portuguese p, t, k have less breath.'],
+ ['“ser 48 anos”','Em alemão “ich bin 48”; em português a idade usa TER.','Eu tenho 48 anos.','“ser 48 anos”','In German “ich bin 48”; in Portuguese age uses TER.'],
+ ['“gosto viajar”','“Gostar” pede “de”.','Eu gosto de viajar.','“gosto viajar”','“Gostar” needs “de”.'],
+ ['“moro no Portugal”','Portugal não leva artigo: “em Portugal”.','Eu moro em Portugal.','“moro no Portugal”','Portugal takes no article: “em Portugal”.']
+];
+U.table(G.$('#errors'), ['Erro provável','Por quê e como corrigir','Pratique','Ouvir'], ER.map(function(e){ return ['<b>'+e[0]+'</b>'+tr(e[3]),e[1]+'<span class="tr" style="display:block">'+e[4]+'</span>','<span class="pt">'+e[2]+'</span>',U.both(e[2])]; }));
+
+var RP = [
+ ['No aeroporto','At the airport','Pessoa A: Boa tarde. Seu passaporte, por favor. · Marc: Aqui está. · A: Quanto tempo você vai ficar? · Marc: Eu vou morar aqui.','Person A: Good afternoon. Your passport, please. · Marc: Here it is. · A: How long will you stay? · Marc: I am going to live here.'],
+ ['Na padaria','At the bakery','Atendente: Bom dia! O que vai ser? · Marc: Bom dia! Um pão na chapa e um cafezinho, por favor. · A: Mais alguma coisa? · Marc: Só isso. Quanto é? · A: Oito reais. · Marc: Aceita Pix?','Clerk: Good morning! What will it be? · Marc: Good morning! A grilled bread roll and a small coffee, please. · A: Anything else? · Marc: Just that. How much is it? · A: Eight reais. · Marc: Do you accept Pix?'],
+ ['Alugar um apartamento','Renting an apartment','Corretor: Esse apartamento tem dois quartos. · Marc: Quanto é o aluguel? · C: Dois mil reais por mês, com o condomínio. · Marc: Posso ver o banheiro?','Agent: This apartment has two bedrooms. · Marc: How much is the rent? · A: Two thousand reais a month, including the building fee. · Marc: Can I see the bathroom?'],
+ ['Conhecendo a família','Meeting the family','Mãe: Muito prazer! Você é de onde? · Marc: Prazer! Eu sou da Alemanha, mas moro em Portugal. · Mãe: Que legal! Você gosta de feijoada? · Marc: Eu quero provar!','Mother: Nice to meet you! Where are you from? · Marc: Nice to meet you! I am from Germany, but I live in Portugal. · Mother: How cool! Do you like feijoada? · Marc: I want to try it!']
+];
+G.$('#roles').innerHTML = '<div class="grid g2">'+RP.map(function(r){ return '<div class="card"><h3>'+r[0]+tr(r[1])+'</h3><p>'+r[2]+'</p><p class="tr">'+r[3]+'</p></div>'; }).join('')+'</div>';
+
+var CD = [
+ ['Cumprimentar e me despedir.','Greet and say goodbye.'],['Dizer meu nome, idade e de onde sou.','Say my name, age and where I am from.'],['Soletrar meu nome.','Spell my name.'],['Pronunciar os sons básicos do Brasil (t/d, final -e, nasais).','Pronounce the basic sounds of Brazil (t/d, final -e, nasals).'],['Entender e dizer números até 100 e anos.','Understand and say numbers up to 100 and years.'],['Perguntar e dizer horas e datas.','Ask and tell the time and dates.'],['Pedir para repetir ou falar mais devagar.','Ask to repeat or speak more slowly.'],['Fazer perguntas simples (Onde? Quando? Quanto?).','Ask simple questions (Where? When? How much?).'],['Pedir algo e perguntar o preço.','Ask for something and ask the price.'],['Falar um pouco sobre minha vida (onde morei, onde moro, o que quero).','Say a little about my life (where I lived, where I live, what I want).'],['Entender frases curtas em português do Brasil.','Understand short sentences in Brazilian Portuguese.'],['Reconhecer 10 diferenças entre Brasil e Portugal.','Recognize 10 differences between Brazil and Portugal.']
+];
+G.$('#a1').innerHTML = CD.map(function(t,n){ var kk='a1:'+n; return '<label class="chk"><input type="checkbox" data-k="'+kk+'"'+(G.Store.get(kk,false)?' checked':'')+'><span>Eu consigo: '+t[0]+'<span class="tr" style="display:block">I can: '+t[1]+'</span></span></label>'; }).join('');
+})();
+</script>

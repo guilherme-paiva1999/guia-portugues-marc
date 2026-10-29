@@ -1,0 +1,60 @@
+<section class="hero">
+  <div>
+    <h1>Português do Brasil, do zero à primeira conversa<span class="tr">Brazilian Portuguese, from zero to your first conversation</span></h1>
+    <p class="lead">Guia interativo das aulas para o Marc: alfabeto, sons, fonética, apresentação pessoal e a base que um iniciante precisa para falar como se fala no Brasil.<span class="tr" style="display:block;margin-top:4px">Interactive lesson guide for Marc: alphabet, sounds, phonetics, a personal introduction and the foundation a beginner needs to speak the way people speak in Brazil.</span></p>
+    <p><a class="btn pri" href="01-comecando.html" style="text-decoration:none;display:inline-block">Começar pelo módulo 1<span class="tr"> · Start with module 1</span></a></p>
+  </div>
+  <div class="tiles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+</section>
+
+<div class="grid g2" style="margin-top:18px">
+  <div class="card">
+    <h3>Para quem é este guia<span class="tr"> · Who this guide is for</span></h3>
+    <p><b>Marc</b>, alemão, 48 anos. Morou no Vietnã e na Malásia, viajou por toda a Ásia e vive em Portugal há dois anos. O objetivo é falar português <b>do Brasil</b> para se mudar para lá com a parceira ou o parceiro.</p>
+    <p class="tr">Marc, German, 48. He lived in Vietnam and Malaysia, travelled all over Asia and has lived in Portugal for two years. The goal is to speak <b>Brazilian</b> Portuguese to move there with his partner.</p>
+    <p class="muted" style="margin:0">Como ele ouve português europeu todos os dias, o guia compara os dois sotaques desde o início.<span class="tr" style="display:block">Since he hears European Portuguese every day, the guide compares the two accents from the start.</span></p>
+  </div>
+  <div class="card">
+    <h3>Como usar<span class="tr"> · How to use</span></h3>
+    <ul style="margin:0;padding-left:1.2em">
+      <li>Clique em <button type="button" class="say" data-say="Olá! Tudo bem?" aria-label="Ouvir exemplo">🔊</button> para ouvir. O 🐢 toca devagar.<span class="tr"> · Click to listen. The 🐢 plays slowly.</span></li>
+      <li>Ajuste voz e velocidade em <b>🔊 Áudio</b>, no topo.<span class="tr"> · Adjust voice and speed under Audio, at the top.</span></li>
+      <li>O botão <b>🇬🇧 English</b> liga e desliga as traduções.<span class="tr"> · The English switch turns translations on and off.</span></li>
+      <li>O botão <b>👩‍🏫 Professor</b> mostra as notas de aula.<span class="tr"> · The Teacher switch shows lesson notes.</span></li>
+      <li>Resultados e progresso ficam salvos neste navegador.<span class="tr"> · Results and progress are saved in this browser.</span></li>
+    </ul>
+  </div>
+</div>
+
+<div class="callout tip">
+  <b class="t">Sobre o áudio<span class="tr"> · About the audio</span></b>
+  <p>As vozes vêm do seu aparelho (Chrome, Edge e Safari têm voz em português do Brasil; no iPhone e no Mac é a “Luciana”). Elas ajudam a estudar sozinho, mas não substituem a pronúncia da professora. O botão 🎤 de repetir funciona no Chrome e no Edge.</p>
+  <p class="tr">The voices come from your device (Chrome, Edge and Safari have a Brazilian Portuguese voice; on iPhone and Mac it is “Luciana”). They help you study alone but do not replace your teacher's pronunciation. The 🎤 repeat button works in Chrome and Edge.</p>
+</div>
+
+<h2>Os módulos<span class="tr"> · The modules</span></h2>
+<div id="mods" class="grid g2"></div>
+
+<div class="card" style="margin-top:20px">
+  <h3>Seu progresso<span class="tr"> · Your progress</span></h3>
+  <div class="pbar"><i id="pgbar" style="width:0%"></i></div>
+  <p id="pgtxt" class="muted" style="margin:0"></p>
+</div>
+
+<script>
+(function(){
+  var G = window.G, pages = window.GUIA_PAGES.filter(function(p){ return p.id!=='index'; });
+  var box = G.$('#mods'), done = 0;
+  pages.forEach(function(p){
+    var isDone = G.Store.get('done:'+p.id, false); if(isDone) done++;
+    var keys = G.Store.keys('best:'+p.id+':'); var best = keys.map(function(k){ return G.Store.get(k.replace(/^ptguia:/,''),0); });
+    var avg = best.length ? Math.round(best.reduce(function(a,b){ return a+b; },0)/best.length) : null;
+    var a = document.createElement('a'); a.className = 'mod'+(isDone?' done':''); a.href = p.file;
+    a.innerHTML = '<span class="ic" aria-hidden="true">'+p.icon+'</span><h3>'+p.title+(isDone?' ✔':'')+G.tr(p.en)+'</h3><span>'+p.desc+'<span class="tr">'+p.descEn+'</span></span><span class="meta">'+(p.min?('≈ '+p.min+' min · '):'')+(avg!==null?'média nos quizzes: '+avg+'%'+G.tr('quiz average'):'quizzes ainda não feitos'+G.tr('quizzes not done yet'))+'</span>';
+    box.appendChild(a);
+  });
+  var pct = Math.round(done/pages.length*100);
+  G.$('#pgbar').style.width = pct+'%';
+  G.$('#pgtxt').innerHTML = done+' de '+pages.length+' módulos concluídos.'+G.tr(done+' of '+pages.length+' modules completed');
+})();
+</script>

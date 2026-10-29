@@ -1,0 +1,143 @@
+<h1>Brasil × Portugal<span class="tr">Brazil vs Portugal</span></h1>
+<p class="sec-intro">Módulo 7 · Brazil vs Portugal. O Marc ouve português europeu todos os dias, mas quer falar como um brasileiro. Aqui estão as diferenças que mais importam.<span class="tr">Marc hears European Portuguese every day but wants to speak like a Brazilian. Here are the differences that matter most.</span></p>
+
+<div class="callout">
+  <b class="t">Same language, different music</b>
+  <p>Brazilians and Portuguese understand each other, and your everyday contact with Portugal helps your vocabulary and reading. But in sound, a few rules are almost opposite. Buttons marked 🔊 play the <b>Brazilian</b> voice, buttons marked 🇵🇹 play a <b>European</b> voice <i>if your device has one</i>.</p>
+</div>
+
+<h2>1. Pronúncia<span class="tr"> · Pronunciation</span></h2>
+<div id="pron"></div>
+<div class="callout de">
+  <b class="t">🇩🇪 Your advantage and your trap</b>
+  <p><b>Advantage:</b> the European “r” (<span class="ipa">[ʁ]</span>, uvular) is exactly the German “r”, and a Brazilian initial R is close to German “ch” in “Bach” or even the same sound. <b>Trap:</b> if you copy the European way of swallowing vowels, you will sound Portuguese. In Brazil keep every vowel <b>clear and open</b>: <span class="pt">telefone</span> = “te-le-fô-ni”, not “tlfón”.</p>
+</div>
+<div id="qPron"></div>
+
+<h2>2. Gramática<span class="tr"> · Grammar</span></h2>
+<div id="gram"></div>
+
+<h2>3. Vocabulário<span class="tr"> · Vocabulary</span></h2>
+<p>Filter, listen, and notice the pairs you hear in Portugal every day.</p>
+<div class="filters" id="vf" role="group" aria-label="Filtrar vocabulário"></div>
+<div id="vocab"></div>
+
+<div class="callout warn">
+  <b class="t">Cuidado: palavras com outro sentido</b>
+  <div id="warn"></div>
+</div>
+
+<h3>Flashcards: palavras do Brasil<span class="tr"> · Flashcards: Brazilian words</span></h3>
+<div id="fcBr"></div>
+<div id="mBr"></div>
+<div id="qBr"></div>
+
+<h2>4. Brasil é grande: sotaques<span class="tr"> · Brazil is big: accents</span></h2>
+<div class="grid g3" id="accents"></div>
+<p class="muted">There is no single “correct” accent. A good starting target is the neutral accent heard in national news, then you learn other accents by ear.</p>
+
+<h2>5. Vocabulário de vida prática no Brasil<span class="tr"> · Practical-life vocabulary in Brazil</span></h2>
+<p>You will meet these in your first weeks after moving.</p>
+<div id="life"></div>
+
+<h2>6. Treine o ouvido<span class="tr"> · Train your ear</span></h2>
+<ul>
+  <li>Watch series, films and YouTube in <b>Brazilian</b> Portuguese with Portuguese subtitles, and repeat short lines.</li>
+  <li>Listen to Brazilian music (samba, bossa nova, MPB, sertanejo) and read the lyrics from a licensed lyrics site.</li>
+  <li>Choose Brazilian podcasts and voice messages from Brazilian friends: real speed is faster and more connected.</li>
+  <li>Record yourself reading Marc’s text from <a href="04-apresentacao.html">Apresentação</a> and compare it with the Brazilian audio.</li>
+</ul>
+
+<div class="callout prof">
+  <b class="t">Para a professora<span class="tr"> · For the teacher</span></b>
+  <p>Combine com o Marc uma regra de ouro: <b>“palavras do dia a dia do Brasil”</b>. Quando ele disser uma palavra de Portugal (autocarro, telemóvel), você apenas devolve a palavra brasileira, sem corrigir de forma pesada. Reforce o tema das “palavras perigosas” com humor. Pergunte em qual região do Brasil ele pretende morar para ajustar sotaque e gírias.</p>
+  <p class="tr">Agree on a golden rule with Marc: “everyday Brazilian words”. When he says a word from Portugal (autocarro, telemóvel), simply give back the Brazilian word without heavy correction. Reinforce the “dangerous words” topic with humor. Ask which region of Brazil he plans to live in to adjust accent and slang.</p>
+</div>
+
+<button type="button" class="btn complete" data-complete>Marcar módulo como concluído</button>
+
+<script>
+(function(){
+var G = window.G, U = G.UI;
+function bp(br, pt){ return U.say(br)+' '+U.say(pt||br,{lang:'pt-PT'}); }
+
+U.table(G.$('#pron'), ['Traço','🇧🇷 Brasil','🇵🇹 Portugal','Exemplo (🔊 BR · 🇵🇹 PT)'], [
+ ['<b>t / d before i</b>','<span class="ipa">[ˈdʒiɐ]</span> “djia”','<span class="ipa">[ˈdiɐ]</span> “dia”','<span class="pt">dia, tia</span> '+bp('dia, tia')],
+ ['<b>final -e</b>','<span class="ipa">[ˈlejtʃi]</span> “lêitchi”','<span class="ipa">[ˈlɐjt]</span> (almost silent)','<span class="pt">leite</span> '+bp('leite')],
+ ['<b>unstressed vowels</b>','clear: “pe-kê-nu”','swallowed: “p’kê-nu”','<span class="pt">pequeno</span> '+bp('pequeno')],
+ ['<b>final L</b>','<span class="ipa">[w]</span> “Brasiu”','<span class="ipa">[ɫ]</span> dark “l”','<span class="pt">Brasil</span> '+bp('Brasil')],
+ ['<b>initial R</b>','<span class="ipa">[x ~ h]</span> airy “h/ch”','<span class="ipa">[ʁ]</span> German “r”','<span class="pt">rato, rua</span> '+bp('rato, rua')],
+ ['<b>final S</b>','<span class="ipa">[s]</span> (Rio: [ʃ])','<span class="ipa">[ʃ]</span> “sh”','<span class="pt">mais, português</span> '+bp('mais, português')],
+ ['<b>rhythm</b>','even, vowel-rich (syllable-timed)','compressed, consonant-rich','<span class="pt">Eu moro em Portugal.</span> '+G.trB('I live in Portugal.')+' '+bp('Eu moro em Portugal.')]
+]);
+G.Quiz.mount(G.$('#qPron'), { id:'pron-br-pt', shuffle:true, questions:[
+ {q:'In Brazil, <b>dia</b> sounds like…', options:['“dee-a” (as in Portugal)','“djia”'], answer:1, keepOrder:true},
+ {q:'In Brazil, <b>leite</b> ends with…', options:['an almost silent e','the sound “i”'], answer:1, keepOrder:true},
+ {q:'Which pronunciation of <b>Brasil</b> is typical in Brazil?', options:['“Brasiu”','“Brazil” with dark l'], answer:0, keepOrder:true},
+ {q:'The European Portuguese “r” of <b>rato</b> is like…', options:['the German “r”','the Spanish rolled “rr”','a silent r'], answer:0, keepOrder:true},
+ {q:'Which feature makes Portuguese sound “compressed”?', options:['swallowed unstressed vowels','pronouncing every vowel','adding “i” after consonants'], answer:0, keepOrder:true}
+]});
+
+U.table(G.$('#gram'), ['','🇧🇷 Brasil','🇵🇹 Portugal'], [
+ ['I am speaking','<span class="pt">Estou <b>falando</b> português.</span> '+U.say('Estou falando português.'),'<span class="pt">Estou <b>a falar</b> português.</span> '+U.say('Estou a falar português.',{lang:'pt-PT'})],
+ ['you (everyday)','<span class="pt"><b>Você</b> mora aqui?</span> '+U.say('Você mora aqui?'),'<span class="pt"><b>Tu</b> moras aqui?</span> '+U.say('Tu moras aqui?',{lang:'pt-PT'})],
+ ['My name is…','<span class="pt">Eu <b>me</b> chamo Marc.</span> '+U.say('Eu me chamo Marc.'),'<span class="pt">Chamo-<b>me</b> Marc.</span> '+U.say('Chamo-me Marc.',{lang:'pt-PT'})],
+ ['I love you','<span class="pt">Eu <b>te</b> amo.</span> '+U.say('Eu te amo.'),'<span class="pt">Amo-<b>te</b>.</span> '+U.say('Amo-te.',{lang:'pt-PT'})],
+ ['my car','<span class="pt"><b>Meu</b> carro é azul.</span> '+U.say('Meu carro é azul.'),'<span class="pt"><b>O meu</b> carro é azul.</span> '+U.say('O meu carro é azul.',{lang:'pt-PT'})],
+ ['I arrived home','<span class="pt">Cheguei <b>em</b> casa.</span> '+U.say('Cheguei em casa.'),'<span class="pt">Cheguei <b>a</b> casa.</span> '+U.say('Cheguei a casa.',{lang:'pt-PT'})],
+ ['we (everyday)','<span class="pt"><b>A gente</b> vai.</span> '+U.say('A gente vai.'),'<span class="pt"><b>Nós</b> vamos.</span> '+U.say('Nós vamos.',{lang:'pt-PT'})],
+ ['Hi, how are you?','<span class="pt">Oi, tudo bem?</span> '+U.say('Oi, tudo bem?'),'<span class="pt">Olá, tudo bem? / Estás bom?</span> '+U.say('Olá, tudo bem?',{lang:'pt-PT'})]
+]);
+
+/* vocabulary: en, br, pt, cat, note */
+var VOC = [
+ ['bus','ônibus','autocarro','transporte',''],['train','trem','comboio','transporte',''],['bus stop','ponto de ônibus','paragem','transporte',''],
+ ['to take the bus','pegar o ônibus','apanhar o autocarro','transporte','BR “apanhar” = get beaten!'],['ticket (transport)','passagem','bilhete','transporte',''],['sidewalk','calçada','passeio','cidade',''],
+ ['cell phone','celular','telemóvel','casa',''],['screen','tela','ecrã','casa',''],['bathroom','banheiro','casa de banho','casa',''],['fridge','geladeira','frigorífico','casa',''],['shower','chuveiro','duche','casa',''],
+ ['breakfast','café da manhã','pequeno-almoço','comida',''],['juice','suco','sumo','comida',''],['ice cream','sorvete','gelado','comida',''],['bakery / café','padaria','pastelaria','comida','In Brazil a <i>padaria</i> sells bread, coffee and snacks.'],['espresso','cafezinho','bica','comida',''],['butcher','açougue','talho','comida',''],
+ ['T-shirt','camiseta','t-shirt','roupa',''],['suit','terno','fato','roupa',''],['sock','meia','peúga','roupa',''],['pants','calça','calças','roupa',''],
+ ['rent','aluguel','renda / aluguer','vida','For apartments: <i>aluguel</i> (BR).'],['ATM','caixa eletrônico','multibanco','vida',''],['postal code','CEP','código postal','vida',''],['queue','fila','bicha','vida','BR “bicha” is offensive!'],
+ ['cool / nice','legal','fixe','gíria','Also in BR: <i>massa, show, beleza</i>.'],['very','muito','bué (slang)','gíria',''],['kid','criança / menino','miúdo / puto','gíria','BR “puto” is rude!']
+];
+var cats = ['Todos','transporte','casa','comida','roupa','vida','cidade','gíria'], cur = 'Todos';
+function drawVoc(){
+  G.$('#vf').innerHTML = cats.map(function(c){ return '<button type="button" data-c="'+c+'" aria-pressed="'+(c===cur)+'">'+c+'</button>'; }).join('');
+  U.table(G.$('#vocab'), ['English','🇧🇷 Brasil','🇵🇹 Portugal','Nota'], VOC.filter(function(v){ return cur==='Todos'||v[3]===cur; }).map(function(v){ return [v[0],'<span class="pt">'+v[1]+'</span> '+U.say(v[1]),'<span class="pt">'+v[2]+'</span> '+U.say(v[2].split(' /')[0].replace(' (slang)',''),{lang:'pt-PT'}),v[4]]; }));
+}
+G.$('#vf').addEventListener('click', function(e){ var b = e.target.closest('button[data-c]'); if(!b) return; cur = b.getAttribute('data-c'); drawVoc(); });
+drawVoc();
+
+var W = [
+ ['rapariga','PT: girl · BR: can sound offensive in parts of Brazil','Use <b>menina</b> / <b>moça</b>.'],
+ ['bicha','PT: queue · BR: derogatory word for a gay man','Use <b>fila</b>.'],
+ ['puto','PT: kid · BR: rude, also “furious” (puto da vida)','Use <b>menino</b> / <b>garoto</b>.'],
+ ['apanhar','PT: to catch (the bus) · BR: to get beaten up','Use <b>pegar</b> (o ônibus).'],
+ ['camisola','PT: sweater / jersey · BR: nightgown','Use <b>blusa</b> / <b>camiseta</b>.']
+];
+G.$('#warn').innerHTML = W.map(function(w){ return '<div class="sentence" style="border:0;padding:4px 0"><div class="tx"><b class="pt">'+w[0]+'</b> — '+w[1]+'. '+w[2]+'</div></div>'; }).join('');
+
+G.Cards.mount(G.$('#fcBr'), { id:'br-words', deck: VOC.slice(0,18).map(function(v){ return {f:'<span style="font-size:1.1rem" class="en">'+v[0]+'</span>', b:v[1], say:v[1], n:'Portugal: '+v[2]}; }) });
+G.Match.mount(G.$('#mBr'), { title:'Match English with the Brazilian word', sayLeft:false, pairs:[['bus','ônibus'],['cell phone','celular'],['bathroom','banheiro'],['juice','suco'],['fridge','geladeira'],['sidewalk','calçada']] });
+var qb = [];
+VOC.forEach(function(v){ var brWord = v[1].split(' /')[0], ptWord = v[2].split(' /')[0].replace(' (slang)','');
+  if(brWord.toLowerCase()!==ptWord.toLowerCase()){ var q = G.shuffle([[brWord,'Brasil'],[ptWord,'Portugal']])[0]; qb.push({q:'<b>'+q[0]+'</b>: Brazil or Portugal?', options:['Brasil','Portugal'], answer:q[1]==='Brasil'?0:1, keepOrder:true, why:'🇧🇷 '+brWord+' · 🇵🇹 '+ptWord}); }
+});
+G.Quiz.mount(G.$('#qBr'), { id:'br-ou-pt', questions:qb, limit:8 });
+
+var ACC = [
+ ['São Paulo','paulistano','Clear “r” (h/x), final -s as [s], “meu” “mano”.'],
+ ['Rio de Janeiro','carioca','Final -s as “sh”, melodic rhythm: “mermão”, “maneiro”.'],
+ ['Minas Gerais','mineiro','Fast, swallowed endings: “uai”, “trem” (= thing).'],
+ ['Rio Grande do Sul','gaúcho','Uses “tu”: “bah”, “tchê”, “tri” (very).'],
+ ['Nordeste','nordestino','Open vowels, “oxente”, “massa”.'],
+ ['Pará / Amazônia','paraense','Own vocabulary and melody: “égua”.']
+];
+G.$('#accents').innerHTML = ACC.map(function(a){ return '<div class="card"><h3>'+a[0]+'</h3><p class="muted" style="margin:0 0 6px">'+a[1]+'</p><p style="margin:0">'+a[2]+'</p></div>'; }).join('');
+
+var LIFE = [
+ ['CPF','tax number needed for almost everything (bank, phone, shopping)'],['CEP','postal code'],['RG','ID card'],['aluguel','rent'],['condomínio','building fee (also “condo”)'],['mercado / supermercado','grocery store'],
+ ['feira','street market for fruit and vegetables'],['padaria','bakery and breakfast spot'],['Pix','instant payment'],['parcelar','to pay in installments (“em 10 vezes”)'],['boleto','payment slip'],['plano de saúde','private health insurance'],['SUS','public health system'],['DDD','area code']
+];
+U.table(G.$('#life'), ['Palavra','English','Ouvir'], LIFE.map(function(l){ return ['<b class="pt">'+l[0]+'</b>',l[1],U.say(l[0].replace('CPF','cê pê éfe').replace('CEP','cê é pê').replace('RG','érre gê').replace('SUS','sus').replace('DDD','dê dê dê'))]; }));
+})();
+</script>
