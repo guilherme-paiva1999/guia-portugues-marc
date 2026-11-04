@@ -332,7 +332,7 @@ function autoGloss(root){
 var TTS = {
   ok: ('speechSynthesis' in window) && ('SpeechSynthesisUtterance' in window),
   voices: [], token: 0, warned: false,
-  rate: Store.get('rate', 0.9),
+  rate: Store.get('rate', 1),
   voiceName: Store.get('voice', ''),
   load: function(){ if(!this.ok) return; this.voices = speechSynthesis.getVoices() || []; this.refresh(); },
   hasBR: function(){ return this.voices.some(function(v){ return /^pt[-_]br/i.test(v.lang); }); },
@@ -341,9 +341,25 @@ var TTS = {
     var lc = function(v){ return v.lang.replace('_','-').toLowerCase(); };
     if(L==='pt-br' && this.voiceName){ var chosen = this.voices.filter(function(v){ return v.name===self.voiceName; })[0]; if(chosen) return chosen; }
     var exact = this.voices.filter(function(v){ return lc(v)===L; });
-    if(exact.length) return exact[0];
-    if(L==='pt-br'){ var any = this.voices.filter(function(v){ return lc(v).indexOf('pt')===0 && lc(v)!=='pt-pt'; }); if(any.length) return any[0]; }
+    if(exact.length) return this.best(exact);
+    if(L==='pt-br'){ var any = this.voices.filter(function(v){ return lc(v).indexOf('pt')===0 && lc(v)!=='pt-pt'; }); if(any.length) return this.best(any); }
     return null;
+  },
+  /* Pontua as vozes: neurais/online soam bem mais naturais que as locais antigas. */
+  score: function(v){
+    var n = v.name.toLowerCase(), s = 0;
+    if(/natural|neural/.test(n)) s += 100;
+    if(/online/.test(n)) s += 40;
+    if(/premium|enhanced|aprimorad/.test(n)) s += 60;
+    if(/google/.test(n)) s += 50;
+    if(/francisca|antonio|thalita|luciana|fernanda|felipe|vitoria|camila/.test(n)) s += 20;
+    if(/compact|espeak/.test(n)) s -= 50;
+    if(!v.localService) s += 10;
+    return s;
+  },
+  best: function(list){
+    var self = this;
+    return list.slice().sort(function(a,b){ return self.score(b) - self.score(a); })[0];
   },
   speak: function(text, o){
     o = o || {};
@@ -354,7 +370,7 @@ var TTS = {
     var u = new SpeechSynthesisUtterance(text);
     u.lang = lang;
     var v = this.pick(lang); if(v) u.voice = v;
-    u.rate = o.slow ? Math.min(this.rate, 0.6) : this.rate;
+    u.rate = o.slow ? Math.min(this.rate, 0.75) : this.rate;
     if(o.onend){ u.onend = o.onend; u.onerror = o.onend; }
     if(lang==='pt-BR' && !this.warned && this.voices.length && !this.hasBR()){
       this.warned = true; toast('Não achei voz pt-BR neste aparelho. Veja "Áudio" no topo da página.'+tr('No pt-BR voice found on this device. See "Audio" at the top of the page.'));
@@ -375,12 +391,16 @@ var TTS = {
     var sel = $('#voiceSel'); if(!sel) return;
     var self = this;
     var pts = this.voices.filter(function(v){ return /^pt/i.test(v.lang); });
-    pts.sort(function(a,b){ var ab=/pt[-_]br/i.test(a.lang)?0:1, bb=/pt[-_]br/i.test(b.lang)?0:1; return ab-bb; });
+    pts.sort(function(a,b){ var ab=/pt[-_]br/i.test(a.lang)?0:1, bb=/pt[-_]br/i.test(b.lang)?0:1; return ab-bb || self.score(b)-self.score(a); });
     sel.innerHTML = '<option value="">Automática / Automatic</option>' + pts.map(function(v){ return '<option value="'+esc(v.name)+'"'+(v.name===self.voiceName?' selected':'')+'>'+esc(v.name+' ('+v.lang+')')+'</option>'; }).join('');
     var st = $('#voiceStatus');
     if(st){
       if(!this.voices.length) st.innerHTML = 'Carregando vozes… se nada aparecer, o navegador não oferece vozes.'+tr('Loading voices… if nothing appears, the browser offers no voices.');
-      else if(this.hasBR()) st.innerHTML = '✅ Voz em português do Brasil disponível.'+tr('Brazilian Portuguese voice available.');
+      else if(this.hasBR()){
+        var top = this.best(pts.filter(function(v){ return /^pt[-_]br/i.test(v.lang); }));
+        var nat = this.score(top) >= 60;
+        st.innerHTML = '✅ Voz em português do Brasil: '+esc(top.name)+'.'+tr('Brazilian Portuguese voice in use.')+(nat ? '' : ' Para uma voz mais natural, abra o guia no Microsoft Edge (vozes “Natural”) ou no Chrome.'+tr('For a more natural voice, open the guide in Microsoft Edge ("Natural" voices) or Chrome.'));
+      }
       else st.innerHTML = '⚠️ Nenhuma voz pt-BR. Instale uma voz em português do Brasil nas configurações do sistema (Acessibilidade → Fala).'+tr('No pt-BR voice. Install a Brazilian Portuguese voice in your system settings (Accessibility → Speech).');
     }
   }
@@ -728,7 +748,7 @@ window.G = { $:$, $$:$$, esc:esc, shuffle:shuffle, clean:clean, norm:norm, Store
           <label for="voiceSel">Voz (português do Brasil)<span class="tr"> · Voice</span></label>
           <select id="voiceSel"><option value="">Automática</option></select>
           <label for="rateSel">Velocidade<span class="tr"> · Speed</span></label>
-          <input type="range" id="rateSel" min="0.5" max="1.2" step="0.05" value="0.9">
+          <input type="range" id="rateSel" min="0.5" max="1.2" step="0.05" value="1">
           <p style="margin:10px 0 0"><button type="button" class="btn sm" id="voiceTest">Testar voz<span class="tr"> · Test voice</span></button></p>
           <p class="vstatus" id="voiceStatus"></p>
         </div>
